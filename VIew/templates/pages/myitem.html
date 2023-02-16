@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/header.js" defer></script>
+    <script src="/static/js/footer.js" defer></script>
+    <link rel="stylesheet" href="/static/css/track/myitem.css">
+    <link rel="stylesheet" href="/static/css/common/header.css">
+    <link rel="stylesheet" href="/static/css/common/footer.css">
+    <link rel="stylesheet" href="/static/css/common/reset.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header" th:insert="/pages/common/Header :: header">
+        <div class="header-con" th:fragment="header">
+            <div class="gnb">
+                <div class="logo"><a th:href="@{/home}"><img src="/static/img/head/infinity.png" alt="LogoImage"></a>
+                </div>
+                <div class="main-menu-con">
+                    <ul>
+                        <li>
+                            <div class="li-con">
+                                <div class="left-menu">
+                                    <ul>
+                                        <li><a th:href="@{/page/main}">Tracks</a></li>
+                                        <li><a th:href="@{/#}">Works</a></li>
+                                        <li><a th:href="@{/#}">FAQ</a></li>
+                                        <li><a th:href="@{/#}">About</a></li>
+                                        <li><a th:href="@{/#}">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div class="right-menu hide">
+                                    <input type="text" id="searchBar" size="68" placeholder="Search beats">
+                                </div>
+                            </div>
+                            <div class="img">
+                                <button>
+                                    <img src="/static/img/head/magnifier.png" alt="searchImg" id="magnifier">
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a th:href="@{/#}">
+                                    <img src="/static/img/head/shopping-bag.png" alt="shoppingBag">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a th:href="@{/#}">
+                                    <img src="/static/img/head/login.png" alt="login">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-con">
+            <div class="logo-box">
+               <h2 class="logo">Cart Review</h2>
+               <label>Specification</label>
+           </div>
+
+           <div class="main">
+        <div class="left">
+            
+            <div class="item-data">
+                <div class="data-info">
+                    <ul>
+                        <li></li>
+                        <li>PRODUCT</li>
+                        <li>PRICE</li>
+                    </ul>
+                </div>
+                <div class="info-data">
+                    <ul>
+                        <li>img</li>
+                        <li>th:value${item.info}</li>
+                        <li>th:value${item.price}</li>
+                    </ul>
+                    <ul>
+                        <li>img</li>
+                        <li>th:value${item.info}</li>
+                        <li>th:value${item.price}</li>
+                    </ul>
+                    <ul>
+                        <li>img</li>
+                        <li>th:value${item.info}</li>
+                        <li>th:value${item.price}</li>
+                    </ul>
+                    <!-- <ul>
+                        <li>img</li>
+                        <li>th:value${item.info}</li>
+                        <li>th:value${item.price}</li>
+                    </ul> -->
+                    
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="right">
+            <div class="gross">
+                <ul>
+                    <li>Gross</li>
+                    <li>${item.price}</li>
+                </ul>
+            </div>
+            <div class="discount">
+                <ul>
+                    <li>Discount</li>
+                    <li>${item.적립}</li>
+                </ul>
+            </div>
+            <div class="total">
+                <ul>
+                    <li>Total</li>
+                    <li>${item.price}</li>
+                </ul>
+            </div>
+            
+            <div class="pay">
+                <p>You are checking out as ${name} Not you? <a href="#">sign out</a></p>
+                <button onclick="location.href='#'">PAY VIA PAYPAL</button >
+                <button onclick="location.href='#'">PAY VIA SRRIPE</button >
+            </div>
+            <div class="error">
+                <p>By clicking the button you accept the product(s) 
+                    License Agreement(s)</p>
+                    <p>Please read our <a href="https://help.beatstars.com/hc/en-us/articles/206090118-Refund-Policy">
+                        Refund Policy.</a></p>
+            </div>
+            
+        </div>
+
+    </div>
+        </div>
+    </div>
+
+    <div class="footer" th:insert="/pages/common/Footer :: footer">
+        <div class="footer-con">
+            <div class="detail-con">
+                <div class="logo">
+                    <a href="">
+                        <h1>Logo</h1>
+                    </a>
+                </div>
+
+                <ul class="contactInfo">
+                    <li>
+                        <ul>
+                            <li><a th:href="@{#}">Home</a></li>
+                            <li><a th:href="@{#}">Tracks</a></li>
+                            <li><a th:href="@{#}">Works</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a th:href="@{#}">FAQ</a></li>
+                            <li><a th:href="@{#}">About</a></li>
+                            <li><a th:href="@{#}">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a th:href="@{#}">Licensing Info</a></li>
+                            <li><a th:href="@{#}">Terms of use</a></li>
+                            <li><a th:href="@{#}">Privacy policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="socialContactPoint">
+                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/facebook.png" alt="facebook"></a></li>
+                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/youtube.png" alt="youtube"></a></li>
+                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/instagram.png" alt="instagram"></a></li>
+                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/soundcloud.png" alt="soundcloud"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
