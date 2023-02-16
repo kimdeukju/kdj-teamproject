@@ -1,0 +1,15 @@
+@import url("../css/common/reset.css");
+@import url("../css/common/footer.css");
+@import url("../css/common/header.css");
+
+.main{
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+

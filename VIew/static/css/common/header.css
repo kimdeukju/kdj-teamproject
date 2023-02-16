@@ -1,0 +1,116 @@
+/* Header */
+
+
+img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.header {
+    width: 100vw;
+    height: auto;
+}
+
+.header .header-con {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    background-color: white;
+}
+
+.header .header-con .gnb {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+.header .header-con .gnb .main-menu-con {
+    width: auto;
+}
+.header .header-con .gnb .main-menu-con>ul{
+    display: flex;
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+}
+.header .header-con .gnb .main-menu-con>ul>li{
+    display: flex;
+    padding: 0 30px;
+    flex-grow: 1;
+}
+.header .header-con .gnb .main-menu-con>ul>li>div{
+    padding: 0 30px;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con{
+    display: flex;
+    flex-direction: column;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 돋보기 누르면 검색창 뜨게 하기 */
+.header .header-con .gnb .main-menu-con>ul>li{
+    position: relative;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con{
+    width: auto;
+    position: absolute;
+    left: -530px;
+}
+/* .header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu{
+    display: flex;
+    justify-content: center;
+} */
+.header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu ul{
+    display: flex;
+    line-height: inherit;
+    width: auto;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu ul>li{
+    line-height: 50px;
+    padding: 0 20px;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu{
+    display: flex;
+    align-items: center;
+    top: 10px;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu input{
+    line-height: 30px;
+    padding: 0 20px;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+/* .header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu{
+    position: absolute;
+    visibility: hidden;
+}
+.header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu{
+    position: absolute;
+    visibility: hidden;
+} */
+
+.hide{
+    position: absolute;
+    visibility: hidden;
+    transition: all .1s cubic-bezier(.19,1.03,.95,.17) ;
+}
+
+.show{
+    position: absolute;
+    visibility: visible;
+    transition: all .1s ease-in-out;
+}
+
+
+
+
+
+
+
+
