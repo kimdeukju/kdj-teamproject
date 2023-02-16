@@ -1,0 +1,140 @@
+@import url('reset.css');
+
+/* 홈페이지 전체 폰트 설정 */
+@import url('https://fonts.cdnfonts.com/css/helvetica-2');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+/* font-family: "Poppins", 'Helvetica', sans-serif;
+font-size: 40px;
+font-weight: 700; */
+
+
+/* comment 박스를 중간에 보여주기 위한것 */
+
+.comment {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.comment .comment-con {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Comments columns */
+.comment .comment-con .comment-column {
+    /* border: 1px solid red; */
+    /* box-sizing: border-box; */
+    /* padding: 10px; */
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment .comment-con .comment-column .column{
+    flex-grow: 1;
+    width: 100%;
+    padding: 0;
+    display: flex;
+}
+
+.comment .comment-con .comment-column .column>li:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    flex: 1 100%;
+}
+.comment .comment-con .comment-column .column>li:nth-child(2) {
+    display: flex;
+    flex: 1 100%;
+    justify-content: center;
+}
+.comment .comment-con .comment-column .column>li:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 0 0;
+    flex: 5 100%;
+}
+.comment .comment-con .comment-column .column>li:nth-child(4) {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 0 20px;
+    flex: 1 100%;
+}
+.comment .comment-con .comment-column .column>li {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-sizing: border-box;
+    font-family: "Poppins", 'Helvetica', sans-serif;
+    font-size: 15px;
+}
+
+/* Comments lists */
+.comment .comment-con .comment-lists {
+    /* border: 1px solid red; */
+    /* box-sizing: border-box; */
+    /* padding: 10px; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.comment .comment-con .comment-lists .lists{
+    flex-grow: 1;
+    display: flex;
+    width: auto;
+    padding: 0;
+}
+
+.comment .comment-con .comment-lists .lists>li:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 110px;
+}
+.comment .comment-con .comment-lists .lists>li:nth-child(2) {
+    display: flex;
+    flex: 1 110px;
+    justify-content: center;
+    align-items: center;
+}
+.comment .comment-con .comment-lists .lists>li:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    flex: 5 110px;
+}
+.comment .comment-con .comment-lists .lists>li:nth-child(4) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 0 20px;
+    flex: 1 110px;
+}
+.comment .comment-con .comment-lists .lists>li {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    box-sizing: border-box;
+    font-family: "Poppins", 'Helvetica', sans-serif;
+    font-size: 15px;
+}
+
+.comment .comment-con .comment-lists .lists>li:nth-child(3)>div{
+    width: 100%;
+    word-break:break-all;
+}
+
+.hide{
+    visibility: hidden;
+    transition: all .4s cubic-bezier(1,0,0,1);;
+}
