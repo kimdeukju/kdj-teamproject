@@ -60,6 +60,28 @@ alter table items add constraint items_member_tb_1 foreign key (member_no) refer
 select member_tb.id '멤버명', cart.cart_no '카트번호', items.item from member_tb inner join cart on member_tb.member_tb_no=cart.member_1 inner join cartItems on cart.cart_no=cartItems.cart_no inner join items on cartItems.item_no = items.item_no;
 
 -- 게시글 DB ------------------------------------------------------------------------------------------------------
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b1', 'text1', 'writer1', 'Link1', 1);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b2', 'text2', 'writer2', 'Link2', 2);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b3', 'text3', 'writer3', 'Link3', 2);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b4', 'text4', 'writer4', 'Link4', 2);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b5', 'text5', 'writer5', 'Link5', 3);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b6', 'text6', 'writer6', 'Link6', 4);
+insert into board_tb (board_title, board_text, board_writer, youtubeLink, member_no) values('b7', 'text7', 'writer7', 'Link7', 1);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text1', 'writer1', 1, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text2', 'writer2', 1, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text3', 'writer3', 2, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text4', 'writer4', 3, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text5', 'writer5', 2, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text6', 'writer6', 2, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text7', 'writer7', 2, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text8', 'writer8', 2, 3);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text9', 'writer9', 6, 2);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text10', 'writer10', 7, 1);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text11', 'writer11', 4, 1);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text12', 'writer12', 4, 1);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text13', 'writer13', 4, 4);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text14', 'writer14', 4, 4);
+insert into comment_tb(comment_text, comment_writer, board_no, member_no) values('text15', 'writer15', 5, 4);
 
 create table board_tb(
 	board_no int auto_increment,
@@ -68,21 +90,12 @@ create table board_tb(
 	board_time timestamp   NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     board_writer varchar(200) not null,
     youtubeLink varchar(600),
+    member_no int not null,
     likes int,
     views int,
     primary key (board_no)
 );
-drop table board_tb;
-desc board_tb;
-select * from board_tb;
-
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b1', 'text1', 'writer1', 'Link1');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b2', 'text2', 'writer2', 'Link2');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b3', 'text3', 'writer3', 'Link3');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b4', 'text4', 'writer4', 'Link4');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b5', 'text5', 'writer5', 'Link5');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b6', 'text6', 'writer6', 'Link6');
-insert into board_tb (board_title, board_text, board_writer, youtubeLink) values('b7', 'text7', 'writer7', 'Link7');
+alter table board_tb add constraint board_member foreign key (member_no) references member_tb(member_tb_no);
 
 create table comment_tb(
 	comment_no int auto_increment,
@@ -90,28 +103,11 @@ create table comment_tb(
     comment_time timestamp not null default current_timestamp,
     comment_writer varchar(200) not null,
     board_no int not null,
+    member_no int not null,
     primary key(comment_no)
 );
-desc comment_tb;
-drop table comment_tb;
-select * from comment_tb;
 alter table comment_tb add constraint commentToboard foreign key(board_no) references board_tb(board_no);
-
-insert into comment_tb(comment_text, comment_writer, board_no) values('text1', 'writer1', 1);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text2', 'writer2', 1);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text3', 'writer3', 2);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text4', 'writer4', 3);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text5', 'writer5', 2);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text6', 'writer6', 2);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text7', 'writer7', 2);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text8', 'writer8', 2);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text9', 'writer9', 6);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text10', 'writer10', 7);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text11', 'writer11', 4);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text12', 'writer12', 4);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text13', 'writer13', 4);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text14', 'writer14', 4);
-insert into comment_tb(comment_text, comment_writer, board_no) values('text15', 'writer15', 5);
+alter table comment_tb add constraint commentToMember foreign key(member_no) references member_tb(member_tb_no);
 
 -- board_tb 과 comment_tb join
 
