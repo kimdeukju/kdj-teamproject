@@ -1,0 +1,143 @@
+@import url(../css/common/reset.css);
+/* itemDetail */
+.container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+.container .container-con {
+	width: 1166px;
+}
+.container .container-con .track-detail {
+	width: 100%;
+	display: flex;
+	padding: 20px;
+}
+.container .container-con .track-detail .detail-top {
+	display: flex;
+	/* justify-content: center; */
+	width: 100%;
+	padding: 20px;
+}
+.container .container-con .track-detail .detail-top .detail-top-right {
+	padding: 20px;
+}
+.container .container-con .track-detail .detail-top .detail-top-right img {
+	width: 180px;
+	height: 180px;
+}
+.container .container-con .track-detail .detail-top .detail-top-left {
+	padding: 20px;
+}
+.container .container-con .track-detail .detail-top .detail-top-left ul {
+	display: flex;
+	flex-direction: column;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.track-name {
+	display: flex;
+	align-items: center;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.track-name
+	li:nth-child(2) {
+	padding: 0 5px;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	li.logo {
+	font-size: 14px;
+	font-weight: bold;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.bpm-time {
+	display: flex;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	li.bpm
+	span.bpm1 {
+	background-color: #000000;
+	color: #ffffff;
+	width: 13px;
+	height: 13px;
+	font-size: 8px;
+	border-radius: 5px;
+	line-height: 15px;
+	padding: 0 2px;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	li.bpm
+	span.bpm2 {
+	font-size: 14px;
+	margin-right: 20px;
+	margin-left: 5px;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.bpm-time
+	.track-time {
+	display: flex;
+	align-items: flex-end;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.bpm-time
+	.track-time
+	li
+	img {
+	width: 14px;
+	height: 14px;
+}
+.container
+	.container-con
+	.track-detail
+	.detail-top
+	.detail-top-left
+	ul
+	.bpm-time
+	.track-time
+	li:nth-child(2) {
+	font-size: 14px;
+	margin-left: 5px;
+}
