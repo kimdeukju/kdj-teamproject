@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1seog2jo login</title>
+<!--    <link rel="stylesheet" href="/static/css/login.css">-->
+     <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+  <div class="container">
+    <div class="join">
+      <div class="join-form">
+        <form th:action="@{/member/login}" method="post" id="joinForm">
+            <ul>
+              
+                <li class="s1">1석2조 로그인</li>
+              
+                <li class="s2"><input type="text" name="userId" id="userId"
+                  placeholder="아이디입력" aria-label="아이디입력" class="text" minlength="4" maxlength="10">
+                </li>
+
+                <li class="s2"><input type="password" name="userPw" id="userPw"
+                    placeholder="비밀번호" aria-label="비밀번호" class="text" minlength="4" maxlength="10">
+                </li>
+             
+                <li class="s4">
+                      <input type="submit" class="loginOk" value="로그인">
+                    <a th:href="@{/member/join}"  class="s3Sub">회원가입 </a>
+                </li>
+               
+                </ul>
+              </form>
+            </div>
+          </div>
+
+</div>
+</body>
+</html>
