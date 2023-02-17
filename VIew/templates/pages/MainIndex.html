@@ -34,16 +34,14 @@
                                     <input type="text" id="searchBar" size="68" placeholder="Search beats">
                                 </div>
                             </div>
-                            <div class="img">
+                            <div class="s-img">
                                 <img src="/static/img/head/magnifier.png" alt="searchImg" id="magnifier">
                             </div>
                         </li>
-                        <li>
+                        <li class="li-last">
                             <a th:href="@{/#}">
                                 <img src="/static/img/head/shopping-bag.png" alt="shoppingBag">
                             </a>
-                        </li>
-                        <li>
                             <a th:href="@{/#}">
                                 <img src="/static/img/head/login.png" alt="login">
                             </a>
@@ -56,7 +54,28 @@
 
 
     <div class="main">
-
+        <div class="main-con">
+            <div class="imageChange">
+                <ul class="imageChange-con">
+                    <!-- <li><a href="#"><img src="/static/img/Main/main1.jpg" alt="main1"></a></li> -->
+                    <!-- <li><a href="#"><img src="/static/img/Main/main2.jpg" alt="main2"></a></li> -->
+                    <li><a href="#"><img src="/static/img/Main/main3.jpg" alt="main3"></a></li>
+                    <!-- <li><a href="#"><img src="/static/img/Main/main4.jpg" alt="main4"></a></li> -->
+                    <ul>
+                        <li></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="itemsList">
+                <ul>
+                    <li>list1</li>
+                    <li>list2</li>
+                    <li>list3</li>
+                    <li>list4</li>
+                    <li>list5</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="footer" th:insert="/pages/common/Footer :: footer">
@@ -95,7 +114,8 @@
                 <ul class="socialContactPoint">
                     <li><a href="{#}" target="_blank"><img src="/static/img/footer/facebook.png" alt="facebook"></a>
                     </li>
-                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/youtube.png" alt="youtube"></a></li>
+                    <li><a href="{#}" target="_blank"><img src="/static/img/footer/youtube.png" alt="youtube"></a>
+                    </li>
                     <li><a href="{#}" target="_blank"><img src="/static/img/footer/instagram.png" alt="instagram"></a>
                     </li>
                     <li><a href="{#}" target="_blank"><img src="/static/img/footer/soundcloud.png" alt="soundcloud"></a>

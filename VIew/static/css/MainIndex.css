@@ -3,13 +3,46 @@
 @import url("../css/common/header.css");
 
 .main{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    /* border: 1px solid red; */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
 }
+
+.main .main-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* column-gap: 100px; */
+    row-gap: 100px;
+}
+
+.main .main-con .imageChange{
+    width: vw;
+    height: vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main .main-con .imageChange .imageChange-con{
+    width: 80%;
+    height: 50%;
+}
+
+.main .main-con .imageChange .imageChange-con>li{
+    width: 100%;
+    height: 100%;
+}
+
+.main .main-con .imageChange .imageChange-con>li>a{
+    width: 100%;
+    height: 100%;
+}
+.main .main-con .imageChange .imageChange-con>li>a img{
+    width: inherit;
+    height: inherit;
+}
+
 
