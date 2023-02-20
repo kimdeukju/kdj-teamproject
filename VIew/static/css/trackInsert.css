@@ -1,0 +1,106 @@
+@import url(/static/css/common/reset.css);
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-con{
+    width: 70%;
+    height: 600px;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-con .box{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-con .box .left-con{
+    /* border: 1px solid red; */
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .container-con .box .left-con .img{
+    width: 100%;
+    height: 50%;
+    border: 1px solid;
+}
+
+
+.container .container-con .box .center-con{
+    
+    /* border: 1px solid blue; */
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    
+}
+.container .container-con .box .center-con .track-con{
+    
+}
+
+.container .container-con .box .center-con .track-con .track-name{
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.container .container-con .box .center-con .track-con .track-name input{
+    border: none;
+    border-bottom: 1px solid;
+}
+
+
+
+
+
+/* right */
+.container .container-con .box .right-con h3{
+    font-size: 20px;
+    color: red;
+    /* border: 1px solid; */
+    text-shadow: 2px 2px 5px gray;
+}
+
+.container .container-con .box .right-con{
+    /* border: 1px solid green; */
+    width: 30%;
+    height: 100%;
+}
+
+.container .container-con .box .right-con ul,li{
+    text-align: center;
+    padding-top: 34px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.container .container-con .box .right-con button{
+    
+    width: 240px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+}
