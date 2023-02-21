@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Community</title>
+  <link rel="stylesheet" href="/static/css/list.css">
+</head>
+
+<body>
+  <div th:replace="~{/pages/common/Header :: header}"></div>
+
+  <div class="container">
+    <div class="container-con">
+
+      <div class="title">
+        <!--페이지 타이틀-->
+        <h1>Community</h1>
+      </div>
+
+      <div class="boardview">
+        <div class="boardinfo">
+          <ul>
+            <li>NO</li>
+            <li>TITLE</li>
+            <li>WHO?</li>
+            <li>HIT</li>
+            <li>TIME</li>
+          </ul>
+        </div>
+
+        <div class="boardlist">
+          <ul>
+            <!--th:each 사용, 실제 DB에서 불러올 글 목록-->
+            <li>1</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque aspernatur in cumque beatae sunt dolores
+              tempore totam optio doloremque, nulla, autem id architecto. Voluptatem labore fugit necessitatibus fuga,
+              quidem nobis?</li>
+            <li>허인경</li>
+            <li>30</li>
+            <li>2023.02.17</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-end">
+        <div class="end-item">
+          <!--페이징 인덱스, 검색창-->
+          <a href="">WRITE</a>
+          <form action="#" method="get">
+            <select name="" id="">
+              <option value="title">제목</option>
+              <option value="writer">작성자</option>
+            </select>
+            <input type="text" name="search" id="search" class="searchtext" placeholder="Search">
+            <!-- <a href="#" class="searchbtn"><img src="/static/img/searchicon.png" alt="searchicon"></a> -->
+            <input type="image" src="/static/img/searchicon.png" alt="" class="submitbtn">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div th:replace="~{/pages/common/Footer :: footer}"></div>
+</body>
+
+</html>

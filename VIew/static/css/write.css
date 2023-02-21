@@ -39,14 +39,23 @@
 
 .container .container-con .write-form>form>ul>li.li1>input {
   border: none;
+  border-bottom: 1px solid #9b9b9b;
   box-sizing: border-box;
   background-color: #ffffff;
   width: 500px;
-  height: 30px;
+  height: 40px;
   padding: 10px;
   gap: 10px;
 }
 
+.container .container-con .write-form>form>ul>li.li2{
+  align-items: center;
+  /* padding: 5px; */
+  box-sizing: border-box;
+  /* border: 1px solid; */
+}
+
+/*js로 링크 입력창 안 보이게 처리하기(모달)*/
 .container .container-con .write-form>form>ul>li.li2>input.li2sub {
   border: none;
   width: 100px;
@@ -60,8 +69,8 @@
 }
 
 .container .container-con .write-form>form>ul>li.li2>img {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 }
 
 .container .container-con .write-form>form>ul>li.li2>label>img {
@@ -75,14 +84,9 @@
   border: none;
   padding: 10px;
   box-sizing: border-box;
-  /* background-color: azure; */
   box-shadow: 1px 1px 12px 2px rgba(227, 227, 227, 0.59);
   resize: none;
 }
-
-/* .container .container-con .write-form>ul>li.li4 {
-  gap: 10px;
-} */
 
 .container .container-con .write-form>form>ul>li.li4 {
   display: flex;
@@ -90,17 +94,34 @@
   gap: 5px;
 }
 
-/* .container .container-con .write-form>form>ul>li.li4 .write {
-  flex: 0 0 20px;
-  border: none;
-
+.container .container-con .write-form>form>ul>li.li4 a {
+  width: 70px;
+  line-height: 30px;
+  text-align: center;
+  border: 0px solid;
+  /* padding: 10px; */
+  box-sizing: border-box;
   background-color: black;
+  color: #ffffff;
+  border-radius: 5px 5px 5px 5px;
+  font-size: 14px;
+}
+
+/* .container .container-con .write-form>form>ul>li.li4 a:hover {
+  background-color: rgb(121, 121, 121);
+  color: black;
 } */
 
-.container .container-con .write-form>form>ul>li.li4>a {
-  width: 50px;
-  height: 30px;
-  border: 1px solid;
+.container .container-con .write-form>form>ul>li.li4 input {
+  width: 70px;
+  /* height: 30px; */
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  /* padding: 15px 20px; */
+
+  border: 0px solid;
   /* padding: 10px; */
   box-sizing: border-box;
   background-color: black;
@@ -108,4 +129,7 @@
   border-radius: 5px 5px 5px 5px;
 }
 
-/* .container .container-con>form>li.li1 {} */
+/* .container .container-con .write-form>form>ul>li.li4 input:hover {
+  background-color: aquamarine;
+  color: black;
+} */
