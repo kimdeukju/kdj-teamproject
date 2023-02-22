@@ -1,4 +1,4 @@
-@import url(../css/common/reset.css);
+@import url(../common/reset.css);
 
 /* tracks */
 
@@ -149,10 +149,11 @@
 }
 .container .item-con .item .items ul li:nth-child(2) {
 	flex: 2;
+	min-width: 50px;
 	display: flex;
 	height: 40px;
 	line-height: 40px;
-	padding: 0 320px 0 0px;
+	padding: 0 310px 0 0px;
 }
 .container .item-con .item .items ul li:nth-child(3) {
 	flex: 1;
