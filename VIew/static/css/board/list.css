@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 
 .container .container-con {
@@ -26,8 +26,8 @@
   flex-direction: column;
   padding: 5px 20px;
   box-sizing: border-box;
-  border: 1px solid;
   box-sizing: border-box;
+  /* border: 1px solid; */
 }
 
 .container .container-con .title {

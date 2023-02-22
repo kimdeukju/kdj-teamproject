@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>th:text="${게시글 제목 변수로 가져오기}"</title>
+  <link rel="stylesheet" href="/static/css/detailView.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-con">
+      <div class="board-con">
+
+        <div class="boardview">
+          <ul>
+            <!-- <li>th:text="${제목 변수(board.title)}"</li>
+            <li>th:text="${작성자 변수(board.writer)}"</li>
+            <li>th:text="${작성시간 변수(board.creatTime)}"</li>
+            <li>th:text="${내용 변수(board.content)}"</li> -->
+            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+            <li class="li1">
+              <span><img src="/static/img/board/usericon.png" alt=""> 허인경</span>
+              <span>15:50</span>
+            </li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque aspernatur in cumque beatae sunt dolores
+              tempore totam optio doloremque, nulla, autem id architecto. Voluptatem labore fugit necessitatibus fuga,
+              quidem nobis?</li>
+          </ul>
+        </div>
+
+        <div class="btns">
+          <!--로그인&해당 회원만 보이도록 validation 처리-->
+          <ul>
+            <li class="btnli1">
+              <input type="button" value="🤍 I LIKE IT">
+            </li>
+            <li class="btnli2">
+              <input type="button" value="MODIFY">
+              <input type="button" value="DELETE">
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!--댓글창 붙이기-->
+    </div>
+  </div>
+</body>
+
+</html>
