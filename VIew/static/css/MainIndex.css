@@ -2,7 +2,7 @@
 @import url("../css/common/footer.css");
 @import url("../css/common/header.css");
 
-.main{
+.main {
     width: 100vw;
     height: auto;
     display: flex;
@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.main .main-con{
+.main .main-con {
     height: auto;
     width: 100%;
 
@@ -21,9 +21,8 @@
 
 
 /* 앨범 커버 변하는 컨테이너 설정 */
-.main .main-con .imageChange{
+.main .main-con .imageChange {
     height: auto;
-
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: #dfe2de;
@@ -32,7 +31,8 @@
     grid-template-rows: 1fr 1fr 150px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-.main .main-con .imageChange .imageChange-con{
+
+.main .main-con .imageChange .imageChange-con {
     grid-column: 1/2;
     grid-row: 1/4;
     height: 300px;
@@ -41,133 +41,184 @@
     justify-content: center;
     align-items: center;
 }
-.main .main-con .imageChange .imageChange-con li{
+
+.main .main-con .imageChange .imageChange-con li {
     width: 80%;
     height: auto;
 
     display: flex;
     justify-content: center;
-    
+
     /* border: 1px solid yellow;
     box-sizing: border-box; */
 }
-.main .main-con .imageChange .imageChange-con li img{
+
+.main .main-con .imageChange .imageChange-con li img {
     width: 500px;
     height: 500px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 
+/* 앨범에 대한 간략한 정보 보여주는 칸 */
+.main .main-con .imageChange .albumShortInfo-con{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .main-con .imageChange .albumShortInfo-con .albumShortInfo>li{
+    display: flex;
+    justify-content: center;
+    row-gap: 20px;
+}
+.main .main-con .imageChange .albumShortInfo-con .albumShortInfo #title{
+    font-size: 50px;
+}
+.main .main-con .imageChange .albumShortInfo-con .albumShortInfo #singer{
+    font-size: 20px;
+}
+
+
 /* 앨범 커버 변하는 컨테이너 컨트롤러 */
-.main .main-con .imageChange .change-controller{
+.main .main-con .imageChange .change-controller {
     grid-column: 2/3;
     grid-row: 3/4;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
 }
-.main .main-con .imageChange .change-controller .changebuttons{
+
+.main .main-con .imageChange .change-controller .changebuttons {
     width: 90%;
-    height: auto;
+    height: 100%;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .main .main-con .imageChange .change-controller .changebuttons>div {
     width: 100%;
-    height: auto;
+    height: 100%;
     /* background-color: rgb(234, 237, 240);     */
     border: none;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     column-gap: 10px;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1){
+
+.main .main-con .imageChange .change-controller .changebuttons>div button {
+    flex: 1;
     display: flex;
-    background-color: transparent;
-    border: none;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-left: 15px solid darkgrey;
+    border-top: 15px solid lightgray;
+    border-right: 0 solid;
+    border-bottom: 0 solid;
+    border-radius: 15px;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1) #t1{
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1) #t1 {
     width: 0;
     height: 0;
     background-color: transparent;
-    border-top:  60px solid transparent;
+    border-top: 10px solid transparent;
     border-left: 0 solid transparent;
-    border-right: 60px solid #201e1e;
-    border-bottom: 60px solid transparent;
-    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
-}
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1) #t2{
-    width: 0;
-    height: 0;
-    background-color: transparent;
-    border-top:  60px solid transparent;
-    border-left: 0 solid transparent;
-    border-right: 60px solid #201e1e;
-    border-bottom: 60px solid transparent;
+    border-right: 10px solid #201e1e;
+    border-bottom: 10px solid transparent;
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(2){
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1) #t2 {
     width: 0;
     height: 0;
     background-color: transparent;
-    border-top:  60px solid transparent;
-    border-left: 60px solid #201e1e;
-    border-right: 0 solid transparent;
-    border-bottom: 60px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 0 solid transparent;
+    border-right: 10px solid #201e1e;
+    border-bottom: 10px solid transparent;
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3){
-    display: flex;
-    background-color: transparent;
-    border: none;
-}
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3) #f1{
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(2) #show {
     width: 0;
     height: 0;
     background-color: transparent;
-    border-top:  60px solid transparent;
-    border-left: 60px solid #201e1e;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #201e1e;
     border-right: 0 solid transparent;
-    border-bottom: 60px solid transparent;
+    border-bottom: 10px solid transparent;
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3) #f2{
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3) #f1 {
     width: 0;
     height: 0;
     background-color: transparent;
-    border-top:  60px solid transparent;
-    border-left: 60px solid #201e1e;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #201e1e;
     border-right: 0 solid transparent;
-    border-bottom: 60px solid transparent;
+    border-bottom: 10px solid transparent;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+}
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3) #f2 {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #201e1e;
+    border-right: 0 solid transparent;
+    border-bottom: 10px solid transparent;
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
     box-sizing: calc();
 }
 
 /* 버튼을 눌렀을 때 애니메이션 */
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(2):active{
-    border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1):active {
+    border-left: 15px solid gray;
+    border-top: 15px solid darkgray;
+    border-right: 0 solid;
+    border-bottom: 0 solid;
+    background-color: lightgray;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1):active #t1{
-    border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1):active #t1 {
+    border-right: 10px solid white;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1):active #t2{
-    border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(1):active #t2 {
+    border-right: 10px solid white;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3):active #f1{
-    border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(2):active {
+    border-left: 15px solid gray;
+    border-top: 15px solid darkgray;
+    border-right: 0 solid;
+    border-bottom: 0 solid;
+    background-color: lightgray;
 }
-.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3):active #f2{
-    border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(2):active #show {
+    border-left: 10px solid white;
+}
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3):active {
+    border-left: 15px solid gray;
+    border-top: 15px solid darkgray;
+    border-right: 0 solid;
+    border-bottom: 0 solid;
+    background-color: lightgray;
+}
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3):active #f1 {
+    border-left: 10px solid white;
+}
+
+.main .main-con .imageChange .change-controller .changebuttons>div button:nth-child(3):active #f2 {
+    border-left: 10px solid white;
 }
 
 
@@ -177,7 +228,7 @@
 /* 들어있는 음악에 대한 전체 리스트 */
 
 /* 전체적인 크기 조절 */
-.main .main-con .itemsList{
+.main .main-con .itemsList {
     grid-column: 2/3;
     grid-row: 5/7;
     display: flex;
@@ -187,19 +238,22 @@
     row-gap: 20px;
 }
 
-.main .main-con .itemsList .itemsList-column{
+.main .main-con .itemsList .itemsList-column {
     width: 100%;
 }
-.main .main-con .itemsList .itemsList-content{
+
+.main .main-con .itemsList .itemsList-content {
     width: 100%;
 }
-.main .main-con .itemsList .itemsList-column>ul{
+
+.main .main-con .itemsList .itemsList-column>ul {
     width: 100%;
     height: 100%;
-    display: flex; 
+    display: flex;
     justify-content: space-between;
 }
-.main .main-con .itemsList .itemsList-content>ul{
+
+.main .main-con .itemsList .itemsList-content>ul {
     width: 100%;
     height: 100%;
     display: flex;
@@ -208,44 +262,50 @@
 
 
 /*  column, content 의 세부 크기 조정 */
-.main .main-con .itemsList .itemsList-column>ul #col-album{
+.main .main-con .itemsList .itemsList-column>ul #col-album {
     flex: 1;
 }
-.main .main-con .itemsList .itemsList-column>ul #col-title{
+
+.main .main-con .itemsList .itemsList-column>ul #col-title {
     align-items: center;
     flex: 4;
     display: flex;
     justify-content: flex-start;
 }
-.main .main-con .itemsList .itemsList-column>ul #col-time{
+
+.main .main-con .itemsList .itemsList-column>ul #col-time {
     align-items: center;
     flex: 1;
     display: flex;
     justify-content: center;
 }
-.main .main-con .itemsList .itemsList-column>ul #col-bpm{
+
+.main .main-con .itemsList .itemsList-column>ul #col-bpm {
     align-items: center;
     flex: 1;
     display: flex;
     justify-content: center;
 }
-.main .main-con .itemsList .itemsList-column>ul #col-tags{
+
+.main .main-con .itemsList .itemsList-column>ul #col-tags {
     align-items: center;
     flex: 6;
     display: flex;
     justify-content: flex-start;
 }
 
-.main .main-con .itemsList .itemsList-content>ul #con-album{
+.main .main-con .itemsList .itemsList-content>ul #con-album {
     align-items: center;
     flex: 1;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-album img{
+
+.main .main-con .itemsList .itemsList-content>ul #con-album img {
     align-items: center;
     width: 50%;
     height: 100%;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-title{
+
+.main .main-con .itemsList .itemsList-content>ul #con-title {
     align-items: center;
     flex: 4;
     display: flex;
@@ -253,7 +313,8 @@
     border-bottom: 1px solid lightgray;
     box-sizing: border-box;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-time{
+
+.main .main-con .itemsList .itemsList-content>ul #con-time {
     align-items: center;
     flex: 1;
     display: flex;
@@ -261,7 +322,8 @@
     border-bottom: 1px solid lightgray;
     box-sizing: border-box;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-bpm{
+
+.main .main-con .itemsList .itemsList-content>ul #con-bpm {
     align-items: center;
     flex: 1;
     display: flex;
@@ -269,7 +331,8 @@
     border-bottom: 1px solid lightgray;
     box-sizing: border-box;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-tags{
+
+.main .main-con .itemsList .itemsList-content>ul #con-tags {
     align-items: center;
     flex: 5;
     display: flex;
@@ -277,11 +340,13 @@
     border-bottom: 1px solid lightgray;
     box-sizing: border-box;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-tags>div>ul{
+
+.main .main-con .itemsList .itemsList-content>ul #con-tags>div>ul {
     display: flex;
     column-gap: 10px;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-tags>div>ul>li{
+
+.main .main-con .itemsList .itemsList-content>ul #con-tags>div>ul>li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,7 +354,8 @@
     padding: 5px;
     border-radius: 15px;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-price{
+
+.main .main-con .itemsList .itemsList-content>ul #con-price {
     align-items: center;
     flex: 1;
     display: flex;
@@ -297,7 +363,8 @@
     border-bottom: 1px solid lightgray;
     box-sizing: border-box;
 }
-.main .main-con .itemsList .itemsList-content>ul #con-price div{
+
+.main .main-con .itemsList .itemsList-content>ul #con-price div {
     width: 70%;
     height: 70%;
     display: flex;
@@ -307,9 +374,5 @@
     color: white;
     border-radius: 4px;
 }
-
-
-
-
 
 

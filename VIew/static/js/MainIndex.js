@@ -1,22 +1,38 @@
-const backwardBtn=document.querySelector('.change-controller .changebuttons>div button:nth-child(1) #t1');
+const backwardBtn=document.querySelector('.change-controller .changebuttons>div button:nth-child(1)');
 const playBtn=document.querySelector('.change-controller .changebuttons>div button:nth-child(2)');
 const forwardBtn=document.querySelector('.change-controller .changebuttons>div button:nth-child(3)');
 const imageContainer=document.querySelector('.main-con .imageChange .imageChange-con>li>a');
+const img=document.createElement('img');
+
+
+
+img.src='/static/img/main/main1.jpg';
+img.alt='album number1';
+imageContainer.appendChild(img);
+
+let i=2;
+function toForward(){
+    if(i === 5){
+        i=1;
+    }
+
+    img.src=`/static/img/main/main${i}.jpg`;
+    img.alt="album number"+`${i}`;
+    imageContainer.appendChild(img);
+        
+    i++;
+}
+
 
 function toBackward(){
-    // e.preventDefault();
-
-    console.log('This button is working');
-    // <img src="Main/main1.jpg" alt="main1"></img>
-    let img=document.createElement('img');
-    img.src='"Main/main1.jpg"';
-    imageContainer.appendChild(img);
+    let source=imageContainer.childNodes[0].src;
+    console.log(`Current source : ${source}`);
+    source =  `http://127.0.0.1:5500/static/img/main/main${i-1}.jpg`;
+    console.log(`Previous source: ${source}`);
 
 }
 
 
 
-
+forwardBtn.addEventListener('click', toForward);
 backwardBtn.addEventListener('click', toBackward);
-// playBtn.addEventListener('click', showInfo);
-// forwardBtn.addEventListener('click', toForward);
