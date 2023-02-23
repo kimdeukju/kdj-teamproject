@@ -19,17 +19,17 @@
           <div class="option">
             <div class="filters">
               <select class="filter" name="tracks-filter" id="tracks-filter">
-                <option value="">All Moods</option>
-                <option value="Mellow">Mellow</option>
-                <option value="Bouncy">Bouncy</option>
-                <option value="Soulful">Soulful</option>
-                <option value="Sad">Sad</option>
-                <option value="Inspiring">Inspiring</option>
+                <option value="">All Bpm</option>
+                <option value="63">63</option>
+                <option value="72">72</option>
+                <option value="85">85</option>
+                <option value="93">93</option>
+                <option value="122">122</option>
               </select>
             </div>
             <div class="filters">
               <select class="filter" name="tracks-filter" id="tracks-filter">
-                <option value="">All Geners</option>
+                <option value="">All Genres</option>
                 <option value="Rnb">Rnb</option>
                 <option value="New Soul">New Soul</option>
                 <option value="Pop">Pop</option>
@@ -64,39 +64,15 @@
           </ul>
         </div>
         <div class="items">
-          <ul th:each="">
+          <ul th:each="list: ${itemDtoList}">
             <li><img src="../../../static/img/tracks/music.png" alt="대체아이콘"></li>
-            <li th:text="${title}">Hover</li>
-            <li th:text="${time}">03:07</li>
-            <li th:text="${bpm}">103</li>
-            <li th:text="${tags}"><a th:href="@{#}">max</a></li>
-            <li th:text="${tags}"><a th:href="@{#}">mixtape seoul</a></li>
+            <li th:text="${list.itemName}">Hover</li>
+            <li th:text="${list.duration}">03:07</li>
+            <li th:text="${list.bpm}">103</li>
+            <li th:text="${list.producer}"><a th:href="@{#}">max</a></li>
+            <li th:text="${list.genre}"><a th:href="@{#}">mixtape seoul</a></li>
             <li><a th:href="@{#}"><img src="../../../static/img/tracks/share.png" alt="share-icon"></a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/shopping-bag.png"
-                  alt="shopping-bag-icon">$29.95</a>
-            </li>
-          </ul>
-          <ul th:each="">
-            <li><img src="../../../static/img/tracks/music.png" alt="대체아이콘"></li>
-            <li th:text="${title}">Store</li>
-            <li th:text="${time}">03:02</li>
-            <li th:text="${bpm}">143</li>
-            <li th:text="${tags}"><a th:href="@{#}">tuel</a></li>
-            <li th:text="${tags}"><a th:href="@{#}">mixtape seoul</a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/share.png" alt="share-icon"></a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/shopping-bag.png"
-                  alt="shopping-bag-icon">$29.95</a>
-            </li>
-          </ul>
-          <ul th:each="">
-            <li><img src="../../../static/img/tracks/music.png" alt="대체아이콘"></li>
-            <li th:text="${title}">Miles</li>
-            <li th:text="${time}">02:46</li>
-            <li th:text="${bpm}">142</li>
-            <li th:text="${tags}"><a th:href="@{#}">daniel</a></li>
-            <li th:text="${tags}"><a th:href="@{#}">kdhjghighiojfewij</a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/share.png" alt="share-icon"></a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/shopping-bag.png"
+            <li th:text="${list.price}"><a th:href="@{#}"><img src="../../../static/img/tracks/shopping-bag.png"
                   alt="shopping-bag-icon">$29.95</a>
             </li>
           </ul>

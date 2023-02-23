@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1seog2jo Join</title>
-    <link rel="stylesheet" th:href="@{/css/join.css}">
+  <!-- <link rel="stylesheet" th:href="@{/css//join.css}"> -->
+  <link rel="stylesheet" href="../../static/css/join/join.css">
 </head>
+
 <body>
   <div class="container">
     <div class="join">
       <div class="join-form">
         <form th:action="@{/member/join}" method="post" th:object="${memberDto}">
-            <ul>
-              
-                <li class="s1">1석2조 회원가입</li>
-              
-                <li class="s2"><input type="email" th:field="*{email}" name="userId" id="userId" style="border-right:0px; border-top:0px; border-left:0px;"
-                  placeholder="아이디입력" aria-label="아이디입력" class="text" minlength="4" maxlength="10">
-                  <span class="error_next_box" id="idMsg">필수 정보입니다.</span>
-                </li>
+          <ul>
 
-                <li class="s2"><input type="password" th:field="*{password}" name="userPw" id="userPw" style="border-right:0px; border-top:0px; border-left:0px;"
-                    placeholder="비밀번호" aria-label="비밀번호" class="text" minlength="4" maxlength="10">
-                    <span class="error_next_box" id="pwMsg">필수 정보입니다.</span>
-                </li>
+            <li class="s1">Sign Up</li>
 
-                <li class="s2"><input type="text" th:field="*{name}" name="userName" id="userName" style="border-right:0px; border-top:0px; border-left:0px;"
-                      placeholder="이름" aria-label="이름" class="text" minlength="2" maxlength="3">
-                </li>
-              
-                <li class="s2"><input type="text" id="yy" style="border-right:0px; border-top:0px; border-left:0px;"
-                 placeholder="생년월일" aria-label="생년월일" class="int" minlength="8" maxlength="8">
-                 <span class="error_next_box" id="bdMsg">ex)19950327</span>
-                </li>
-      
-                <li class="s3">
-                    <input type="radio" name="gender" id="gender1" value="남자" checked>남
-                    <input type="radio" name="gender" id="gender2" value="여자">여
-                </li>
-             
-                <li class="s4">
-                      <input type="submit" class="joinOk" value="가입하기">
-                </li>
-               
-                </ul>
-              </form>
-            </div>
-          </div>
+            <li class="s2"><input type="email" th:field="*{email}" name="userId" id="userId" placeholder="Enter Id"
+                class="text" minlength="4" maxlength="10">
+            </li>
 
-</div>
+            <li class="s2"><input type="password" th:field="*{password}" name="userPw" id="userPw"
+                placeholder="Enter Password" class="text" minlength="4" maxlength="10">
+            </li>
+
+            <li class="s2"><input type="text" th:field="*{name}" name="userName" id="userName" placeholder="Enter Name"
+                aria-label="이름" class="text" minlength="2" maxlength="3">
+            </li>
+
+            <li class="s2"><input type="text" id="yy" placeholder="Enter Birth Date" class="int" minlength="8"
+                maxlength="8">
+            </li>
+
+            <select class="s3" name="gender" id="gender">
+              <option value="">gender</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+
+            <li class="s4">
+              <input type="submit" class="joinOk" value="sign up">
+            </li>
+
+          </ul>
+        </form>
+      </div>
+    </div>
+
+  </div>
 </body>
+
 </html>
