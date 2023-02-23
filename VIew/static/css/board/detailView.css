@@ -1,32 +1,41 @@
-@import url(common/reset.css);
+@import url(/static/css/common/reset.css);
 
-.container {
+.detailContainer {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
   box-sizing: border-box;
+
   /* border: 1px solid; */
 }
 
-.container .container-con {
+.detailContainer .detailContainer-con {
+  width: 1166px;
   margin: 40px;
-  flex: 0 0 70%;
+  height: auto;
+  flex: 1 0 70%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   align-items: center;
   box-sizing: border-box;
   /* border: 1px solid #ff0000; */
 }
 
-.container .container-con .board-con {
-  width: inherit;
+.detailContainer .detailContainer-con .board-con {
+  width: 100%;
+  height: auto;
   box-sizing: border-box;
   /* border: 1px solid #0000ff; */
 }
 
-.container .container-con .board-con .boardview {
-  width: 500px;
+.detailContainer .detailContainer-con .board-con .boardview {
+  width: 100%;
   /* padding: 40px; */
   height: auto;
   display: flex;
@@ -35,20 +44,20 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .board-con .boardview>ul {
+.detailContainer .detailContainer-con .board-con .boardview>ul {
   width: inherit;
 }
 
-.container .container-con .board-con .boardview>ul>h3 {
+.detailContainer .detailContainer-con .board-con .boardview>ul>h3 {
   margin: 0 0 15px 0;
 }
 
-.container .container-con .board-con .boardview>ul>.li1>span>img {
+.detailContainer .detailContainer-con .board-con .boardview>ul>.li1>span>img {
   width: 20px;
   height: 20px;
 }
 
-.container .container-con .board-con .boardview>ul>.li1 {
+.detailContainer .detailContainer-con .board-con .boardview>ul>.li1 {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #b7b7b7;
@@ -57,13 +66,13 @@
   box-sizing: border-box;
 }
 
-.container .container-con .board-con .btns>ul>.btnli1 {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1 {
   display: flex;
   justify-content: center;
   margin: 30px;
 }
 
-.container .container-con .board-con .btns>ul>.btnli1>input {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1>input {
   width: 85px;
   line-height: 25px;
   border-radius: 5px 5px 5px 5px;
@@ -73,19 +82,19 @@
   transition: 0.3s;
 }
 
-.container .container-con .board-con .btns>ul>.btnli1>input:hover {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli1>input:hover {
   cursor: pointer;
   background-color: #e4e4e4;
   color: black;
 }
 
-.container .container-con .board-con .btns>ul>.btnli2 {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2 {
   display: flex;
   justify-content: flex-end;
   gap: 5px;
 }
 
-.container .container-con .board-con .btns>ul>.btnli2>input {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2>input {
   border: none;
   width: 70px;
   line-height: 35px;
@@ -96,6 +105,6 @@
   font-weight: bold;
 }
 
-.container .container-con .board-con .btns>ul>.btnli2>input:hover {
+.detailContainer .detailContainer-con .board-con .btns>ul>.btnli2>input:hover {
   cursor: pointer;
 }

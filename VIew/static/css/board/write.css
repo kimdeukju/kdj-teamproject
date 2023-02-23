@@ -1,6 +1,6 @@
-@import url(common/reset.css);
+@import url(/static/css/common/reset.css);
 
-.container {
+.writeContainer {
   width: 100%;
   height: auto;
   display: flex;
@@ -9,7 +9,8 @@
   /* border: 1px solid; */
 }
 
-.container .container-con {
+.writeContainer .writeContainer-con {
+  width: 1166px;
   margin: 40px;
   flex: 0 0 70%;
   display: flex;
@@ -19,7 +20,7 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .write-form {
+.writeContainer .writeContainer-con .write-form {
   flex: inherit;
   display: flex;
   flex-direction: column;
@@ -27,17 +28,17 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .write-form>form {
+.writeContainer .writeContainer-con .write-form>form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container .container-con .write-form>form>ul>li {
+.writeContainer .writeContainer-con .write-form>form>ul>li {
   margin: 10px;
 }
 
-.container .container-con .write-form>form>ul>li.li1>input {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li1>input {
   border: none;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -52,7 +53,7 @@
   gap: 10px;
 }
 
-.container .container-con .write-form>form>ul>li.li2 {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li2 {
   align-items: center;
   /* padding: 5px; */
   box-sizing: border-box;
@@ -60,7 +61,7 @@
 }
 
 /*js로 링크 입력창 안 보이게 처리하기(모달)*/
-.container .container-con .write-form>form>ul>li.li2>input.li2sub {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li2>input.li2sub {
   border: none;
   width: 100px;
   height: 23px;
@@ -68,23 +69,23 @@
   box-sizing: border-box;
 }
 
-.container .container-con .write-form>form>ul>li.li2>label {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li2>label {
   gap: 10px;
 }
 
-.container .container-con .write-form>form>ul>li.li2>img {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li2>img {
   width: 15px;
   height: 15px;
   width: 17px;
   height: 17px;
 }
 
-.container .container-con .write-form>form>ul>li.li2>label>img {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li2>label>img {
   width: 15px;
   height: 15px;
 }
 
-.container .container-con .write-form>form>ul>li.li3>textarea {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li3>textarea {
   width: 500px;
   height: 600px;
   border: none;
@@ -94,20 +95,20 @@
   resize: none;
 }
 
-.container .container-con .write-form>form>ul>li.li4 {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li4 {
   display: flex;
   justify-content: flex-start;
   gap: 5px;
 }
 
-/* .container .container-con .write-form>form>ul>li.li4 .write {
+/* .writeContainer .writeContainer-con .write-form>form>ul>li.li4 .write {
   flex: 0 0 20px;
   border: none;
 
   background-color: black;
 } */
 
-.container .container-con .write-form>form>ul>li.li4 a {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li4 a {
   width: 70px;
   /* height: 30px; */
   line-height: 30px;
@@ -116,7 +117,7 @@
 
 /* padding: 15px 20px; */
 
-.container-con .write-form>form>ul>li.li4 a {
+.writeContainer-con .write-form>form>ul>li.li4 a {
   width: 70px;
   line-height: 30px;
   text-align: center;
@@ -129,12 +130,12 @@
   font-size: 14px;
 }
 
-/* .container .container-con .write-form>form>ul>li.li4 a:hover {
+/* .writeContainer .writeContainer-con .write-form>form>ul>li.li4 a:hover {
   background-color: aquamarine;
   color: black;
 } */
 
-.container .container-con .write-form>form>ul>li.li4 input {
+.writeContainer .writeContainer-con .write-form>form>ul>li.li4 input {
   width: 70px;
   /* height: 30px; */
   line-height: 30px;
@@ -149,7 +150,7 @@
   border-radius: 5px 5px 5px 5px;
 }
 
-/* .container .container-con .write-form>form>ul>li.li4 input:hover {
+/* .writeContainer .writeContainer-con .write-form>form>ul>li.li4 input:hover {
   background-color: aquamarine;
   color: black;
 } */

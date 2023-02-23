@@ -3,7 +3,7 @@
 @import url("../common/header.css");
 
 .main {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -12,10 +12,8 @@
 
 .main .main-con {
     height: auto;
-    width: 100%;
-
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1166px 1fr;
     grid-template-rows: 200px 450px 10px 50px 1fr 1fr;
 }
 
@@ -23,6 +21,7 @@
 /* 앨범 커버 변하는 컨테이너 설정 */
 .main .main-con .imageChange {
     height: auto;
+    width: 100%;
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: #dfe2de;
