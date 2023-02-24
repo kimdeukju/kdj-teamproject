@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>itemList</title>
-  <link rel="stylesheet" href="../../../static/css//track/itemList.css">
+  <link rel="stylesheet" href="/static/css//track/itemList.css">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="search-bar">
-            <img src="../../../static/img/tracks/search.png" alt="search-icon">
+            <img src="/static/img/tracks/search.png" alt="search-icon">
             <input type="search" name="search" id="search" placeholder="What type of track are you looking for?">
           </div>
         </div>
@@ -65,14 +65,14 @@
         </div>
         <div class="items">
           <ul th:each="list: ${itemDtoList}">
-            <li><img src="../../../static/img/tracks/music.png" alt="대체아이콘"></li>
+            <li><img src="/static/img/tracks/music.png" alt="대체아이콘"></li>
             <li th:text="${list.itemName}">Hover</li>
             <li th:text="${list.duration}">03:07</li>
             <li th:text="${list.bpm}">103</li>
             <li th:text="${list.producer}"><a th:href="@{#}">max</a></li>
             <li th:text="${list.genre}"><a th:href="@{#}">mixtape seoul</a></li>
-            <li><a th:href="@{#}"><img src="../../../static/img/tracks/share.png" alt="share-icon"></a></li>
-            <li th:text="${list.price}"><a th:href="@{#}"><img src="../../../static/img/tracks/shopping-bag.png"
+            <li><a th:href="@{#}"><img src="/static/img/tracks/share.png" alt="share-icon"></a></li>
+            <li th:text="${list.price}"><a th:href="@{#}"><img src="/static/img/tracks/shopping-bag.png"
                   alt="shopping-bag-icon">$29.95</a>
             </li>
           </ul>
