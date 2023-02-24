@@ -34,8 +34,21 @@
 }
 
 .container .container-con .write-form>form>ul>li {
-  margin: 10px;
+  /* margin: 10px; */
 }
+
+.container .container-con .write-form>form>ul>li.li1 {
+  /* position: relative; */
+}
+
+.container .container-con .write-form>form>ul>li.title-error {
+  /* position: absolute; */
+  color: #d50000;
+  font-size: smaller;
+  /* bottom: 15px; */
+  /* left: 55px; */
+}
+
 
 .container .container-con .write-form>form>ul>li.li1>input {
   border: none;
@@ -54,7 +67,6 @@
 
 .container .container-con .write-form>form>ul>li.li2 {
   align-items: center;
-  /* padding: 5px; */
   box-sizing: border-box;
   /* border: 1px solid; */
 }
@@ -94,6 +106,11 @@
   resize: none;
 }
 
+.container .container-con .write-form>form>ul>li.content-error {
+  color: #d50000;
+  font-size: smaller;
+}
+
 .container .container-con .write-form>form>ul>li.li4 {
   display: flex;
   justify-content: flex-start;
@@ -114,8 +131,6 @@
   text-align: center;
 }
 
-/* padding: 15px 20px; */
-
 .container-con .write-form>form>ul>li.li4 a {
   width: 70px;
   line-height: 30px;
@@ -128,11 +143,6 @@
   border-radius: 5px 5px 5px 5px;
   font-size: 14px;
 }
-
-/* .container .container-con .write-form>form>ul>li.li4 a:hover {
-  background-color: aquamarine;
-  color: black;
-} */
 
 .container .container-con .write-form>form>ul>li.li4 input {
   width: 70px;
@@ -148,8 +158,3 @@
   color: #ffffff;
   border-radius: 5px 5px 5px 5px;
 }
-
-/* .container .container-con .write-form>form>ul>li.li4 input:hover {
-  background-color: aquamarine;
-  color: black;
-} */

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>WRITE</title>
-  <link rel="stylesheet" href="/static/css/write.css">
+  <link rel="stylesheet" th:href="@{/css/write.css}">
 </head>
 
 <body>
@@ -12,31 +12,33 @@
     <div class="container-con">
 
       <div class="write-form">
-        <!--유효성 검사 작업 추가 필요-->
-        <!--th:if / th:errors-->
-        <!--제목이랑 내용에 추가하기-->
-        <form action="" method="post">
+        <!--유효성 검사O-->
+        <form th:action="@{/board/write}" th:object="${boardDto}" method="post">
           <ul>
             <li class="li1">
-              <input type="text" name="title" id="title" placeholder="TITLE">
+              <input type="text" th:field="*{title}" placeholder="TITLE">
             </li>
+            <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li>
 
+            <!--여기에 여백 넣기(윗부분)-->
             <li class="li2">
-              <img src="/static/img/board/youtubeicon.png" alt="youtube-icon">
-              <input type="url" name="youtube" id="youtube" placeholder="youtube url" class="li2sub">
+              <img th:src="@{/img/board/youtubeicon.png}" alt="youtube-icon">
+              <input type="url" th:field="*{youtube}" placeholder="insert url" class="li2sub">
 
               <label>
-                <img src="/static/img/board/foldericon.png" alt="folder-icon"> FILE
-                <input type="file" name="file" id="file" class="li2sub2" style="display: none;">
+                <img th:src="@{/img/board/foldericon.png}" alt="folder-icon">
+                <!-- <input type="file" th:field="*{file}" class="li2sub2" style="display: none;"> -->
               </label>
             </li>
 
             <li class="li3">
-              <textarea name="content" id="content" cols="30" rows="10" placeholder=""></textarea>
+              <textarea name="content" th:field="*{content}" id="content" cols="30" rows="10" placeholder=""></textarea>
             </li>
+            <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li>
 
+            <!--여기에 여백 넣기(윗부분)-->
             <li class="li4">
-              <a href="">BACK</a>
+              <a th:href="@{/board/}">BACK</a>
               <input type="submit" value="WRITE" class="write">
             </li>
           </ul>
