@@ -2,7 +2,7 @@
 /* height has to 50px or little more than that */
 
 .footer {
-    width: 100%;
+    width: 100vw;
     height: auto;
     padding: 72px 0 92px;
     display: flex;
