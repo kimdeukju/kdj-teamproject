@@ -1,0 +1,39 @@
+@import url(/static/css/common/reset.css);
+
+
+.leftNavBarCon .leftNavBarCon-lists{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    row-gap: 20px;
+    padding: 50px 0 10px 20px;
+}
+.leftNavBarCon .leftNavBarCon-lists>*{
+    height: auto;
+    padding: 5px;
+    width: auto;
+}
+.leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(1){
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+}
+.leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(2){
+    padding-left: 50px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px; */
+}
+.leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(2) li{
+    display: flex;
+    align-items: center;
+    /* padding: 4px 4px; */
+}
+.leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(2) li a{
+    color:rgb(236, 236, 236, 0.87);
+}
