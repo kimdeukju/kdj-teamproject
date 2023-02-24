@@ -1,4 +1,4 @@
-const magnifier=document.querySelector('.s-img');
+const magnifier=document.getElementsByClassName('img');
 const leftMenu=document.querySelector('.header .header-con .gnb .main-menu-con>ul>li .li-con .left-menu');
 const rightSearchBar=document.querySelector('.header .header-con .gnb .main-menu-con>ul>li .li-con .right-menu')
 const hide='hide';
@@ -23,4 +23,4 @@ function showSearchBar(e) {
 }
 
 
-magnifier.addEventListener('click', showSearchBar);
+magnifier[0].addEventListener('click', showSearchBar);

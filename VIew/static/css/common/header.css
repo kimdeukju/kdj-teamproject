@@ -2,7 +2,7 @@
 
 
 .header {
-    width: 100%;
+    width: 100vw;
     height: auto;
 }
 
@@ -134,7 +134,7 @@
 
 
 
-.hide2{
+.hide{
     position: absolute;
     visibility: hidden;
     transition: all .1s cubic-bezier(.19,1.03,.95,.17) ;

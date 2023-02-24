@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/track/trackInsert.css">
-    <title>TrackInsert</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/admin/trackInsert.css">
+  <script src="../../../static/js/track/trackInsert.js" defer></script>
+  <title>TrackInsert</title>
 </head>
-    
-    <div class="container">
-        <div class="container-con">
-            <div class="box">
 
-                <div class="left-con">
-                    <div class="img">
-                        <p>img</p>
-                    </div>
-                </div>
-
-                <div class="center-con">
-                    <div class="track-con">
-                    <div class="track-name">
-                        <label>track title</label> <br>
-                        <input type="text">
-                    </div>
-                    <div class="track-name">
-                        <label>duration</label> <br>
-                        <input type="text">
-                    </div>
-                    <div class="track-name">
-                        <label>producer</label> <br>
-                        <input type="text">
-                    </div>
-                    <div class="track-name">
-                        <label>price</label> <br>
-                        <input type="text">
-                    </div>
-                    <div class="track-name">
-                        <label>bpm</label> <br>
-                        <input type="text">
-                    </div>
-                    <div class="track-name">
-                        <label>genre</label> <br>
-                        <input type="text">
-                    </div>
-                </div>
-                </div>
-
-                <div class="right-con">
-                    <ul>
-                        <li><h3>관리자 상품 개시 전 필독</h3></li>
-                        <li>1. 상품명은 올바르게 넣었는지 확인</li>
-                        <li>2. 해당 상품에 대한 가격 확인</li>
-                        <li>3. track producer 확인</li>
-                        <li>4. 등록 시 오타가 없는지 꼭 확인</li>
-                        <li><button type="submit">상품 등록</button></li>   
-                    </ul>
-                </div>
-            </div>
+<div class="container">
+  <div class="container-con">
+    <div class="box">
+      <div class="track-con">
+        <div class="track-name1">
+          <label>Attach pictures</label>
+          <div class="file">
+            <input type="file">
+          </div>
         </div>
-
+        <div class="img"></div>
+        <div class="track-name">
+          <label>title</label>
+          <input type="text">
+        </div>
+        <div class="track-name">
+          <label>duration</label>
+          <input type="text" name="itemName" id="itemName">
+        </div>
+        <div class="track-name">
+          <label>bpm</label>
+          <select name="bpm" id="bpm">
+            <option value="">Select bpm ...</option>
+            <option value="63">63</option>
+            <option value="75">75</option>
+            <option value="81">81</option>
+            <option value="97">97</option>
+            <option value="108">108</option>
+            <option value="126">126</option>
+          </select>
+        </div>
+        <div class="track-name">
+          <label>producer</label>
+          <input type="text">
+        </div>
+        <div class="track-name">
+          <label>genre</label>
+          <input type="text">
+        </div>
+        <div class="track-name">
+          <label>price</label>
+          <input type="text">
+        </div>
+        <div class="button">
+          <button type="submit">Registration</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+</div>
 
 </body>
+
 </html>

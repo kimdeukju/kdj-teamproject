@@ -11,7 +11,8 @@
 	width: 100%;
 	height: auto;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 .container .join .join-form {
 	width: 400px;
@@ -20,12 +21,18 @@
 	box-sizing: border-box;
 	padding: 20px;
 	border-radius: 8px;
+	height: auto;
 }
 /* 테이블 */
 .container .join .join-form ul {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+}
+.container .join .join-form ul li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .container .join .join-form ul li input {
 	width: 100%;
@@ -43,7 +50,8 @@
 	letter-spacing: 0.5px;
 	text-align: center;
 }
-.container .join .join-form ul .s3 {
+.container .join .join-form ul li .s3 {
+	flex: 1;
 	font-size: 12px;
 	padding: 5px 10px;
 	box-sizing: border-box;
@@ -63,4 +71,7 @@
 	color: #0d0d0ddb;
 	cursor: pointer;
 	border-radius: 3px;
+}
+.container .join .join-form ul li .s5 {
+	flex: 1;
 }
