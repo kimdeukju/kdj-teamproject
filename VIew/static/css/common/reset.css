@@ -8,6 +8,7 @@
 }
 html,
 body {
+	/* 각 기능의 최상위 요소에 width 100%를 주고, 바로 아래 자식에 width : 1166px을 준다. */
 	width: 100%;
 	height: auto;
 

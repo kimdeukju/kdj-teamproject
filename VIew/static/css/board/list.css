@@ -1,36 +1,43 @@
-@import url(common/reset.css);
+@import url(/static/css/common/reset.css);
+/* detail의 css */
+@import url(/static/css/board/detailView.css);
+/* write의 css */
+@import url(/static/css/board/write.css);
+/* comment의 css */
+@import url(/static/css/board/comment.css);
+/* header의 css */
+@import url(/static/css/common/header.css);
+/* footer의 css */
+@import url(/static/css/common/footer.css);
 
-/* @font-face {
-  font-family: 'Helvetica';
-  src: url('/static/font/Helvetica.ttf') format(‘truetype’);
-} */
-
-.body {
-  font-family: "Poppins", Helvetica, sans-serif;
+/* Detail 내용 안보이게 하기*/
+.hide{
+  visibility: hidden;
+  position: absolute;
 }
 
-.container {
+.listsContainer {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid;
+  /* border: 1px solid; */
+  position: relative;
 }
 
-.container .container-con {
-  /* flex: 0 1 1200px; */
-  width: 100%;
+/* 전체 리스트 */
+.listsContainer .listsContainer-con {
+  width: 1166px;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   padding: 5px 20px;
   box-sizing: border-box;
-  border: 1px solid;
   box-sizing: border-box;
 }
 
-.container .container-con .title {
+.listsContainer .listsContainer-con .title {
   width: 100%;
   text-align: center;
   font-family: "Poppins", Helvetica, sans-serif;
@@ -41,20 +48,20 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .boardview {
-  width: 100;
+.listsContainer .listsContainer-con .boardview {
+  width: 100%;
   flex: 1;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.container .container-con .boardview .boardinfo {
+.listsContainer .listsContainer-con .boardview .boardinfo {
   width: 100%;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.container .container-con .boardview .boardinfo>ul {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -66,19 +73,19 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .boardview .boardinfo>ul li {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li {
   text-align: center;
   padding: 10px 20px;
   box-sizing: border-box;
   border-bottom: 1px solid #7a7a7a;
 }
 
-.container .container-con .boardview .boardinfo>ul li:nth-child(1) {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(1) {
   flex: 1;
   /* width: 80px; */
 }
 
-.container .container-con .boardview .boardinfo>ul li:nth-child(2) {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(2) {
   flex: 20;
   /* width: 750px; */
   overflow: hidden;
@@ -87,50 +94,50 @@
   word-break: break-all;
 }
 
-.container .container-con .boardview .boardinfo>ul li:nth-child(3) {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(3) {
   flex: 2;
   /* width: 150px; */
 }
 
-.container .container-con .boardview .boardinfo>ul li:nth-child(4) {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(4) {
   flex: 1;
   /* width: 80px; */
 }
 
-.container .container-con .boardview .boardinfo>ul li:nth-child(5) {
+.listsContainer .listsContainer-con .boardview .boardinfo>ul li:nth-child(5) {
   flex: 3;
   /* width: 150px; */
 }
 
 
-.container .container-con .boardview .boardlist {
+.listsContainer .listsContainer-con .boardview .boardlist {
   width: 100%;
   /* background-color: #dfdfdfcf; */
   height: 500px;
   box-sizing: border-box;
 }
 
-.container .container-con .boardview .boardlist>ul {
+.listsContainer .listsContainer-con .boardview .boardlist>ul {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-.container .container-con .boardview .boardlist>ul li {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li {
   text-align: center;
   padding: 5px 20px;
   box-sizing: border-box;
   /* border: 1px solid #cccccc; */
 }
 
-.container .container-con .boardview .boardlist>ul li:nth-child(1) {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(1) {
   /* flex: 0 0 30px; */
   flex: 1;
   /* width: 80px; */
 }
 
-.container .container-con .boardview .boardlist>ul li:nth-child(2) {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(2) {
   flex: 20;
   /* width: 750px; */
   /*말줄임 css*/
@@ -140,23 +147,23 @@
   word-break: break-all;
 }
 
-.container .container-con .boardview .boardlist>ul li:nth-child(3) {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(3) {
   flex: 2;
   /* width: 150px; */
 }
 
-.container .container-con .boardview .boardlist>ul li:nth-child(4) {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(4) {
   /* flex: 0 0 30px; */
   flex: 1;
   /* width: 80px; */
 }
 
-.container .container-con .boardview .boardlist>ul li:nth-child(5) {
+.listsContainer .listsContainer-con .boardview .boardlist>ul li:nth-child(5) {
   flex: 3;
   /* width: 150px; */
 }
 
-.container .container-con .container-end {
+.listsContainer .listsContainer-con .listsContainer-end {
   /* border: 1px solid; */
   /* display: flex;
   justify-content: space-between; */
@@ -165,13 +172,13 @@
   /* border: 1px solid; */
 }
 
-.container .container-con .container-end .end-item {
+.listsContainer .listsContainer-con .listsContainer-end .end-item {
   /* border: 1px solid #000000; */
   display: flex;
   justify-content: space-between;
 }
 
-.container .container-con .container-end .end-item>a {
+.listsContainer .listsContainer-con .listsContainer-end .end-item>a {
   flex: 0 0 65px;
   line-height: 30px;
   text-align: center;
@@ -184,7 +191,7 @@
   /* border: 1px solid #000000; */
 }
 
-.container .container-con .container-end .end-item>form {
+.listsContainer .listsContainer-con .listsContainer-end .end-item>form {
   /* border: 1px solid #000000; */
   display: flex;
   justify-content: space-between;
@@ -193,7 +200,7 @@
   box-sizing: border-box;
 }
 
-.container .container-con .container-end .end-item>form>select {
+.listsContainer .listsContainer-con .listsContainer-end .end-item>form>select {
   width: 70px;
   height: 30px;
   border: none;
@@ -205,7 +212,7 @@
   font-size: small;
 }
 
-.container .container-con .container-end .end-item>form>input.searchtext {
+.listsContainer .listsContainer-con .listsContainer-end .end-item>form>input.searchtext {
   width: 150px;
   height: 30px;
   padding: 10px;
@@ -216,7 +223,7 @@
   border-radius: 3px 3px 3px 3px;
 }
 
-.container .container-con .container-end .end-item>form.submitbtn {
+.listsContainer .listsContainer-con .listsContainer-end .end-item>form.submitbtn {
   border: 1px solid #000000;
   width: 24px;
   height: 24px;
@@ -225,7 +232,7 @@
   align-items: center;
 }
 
-/* .container .container-con .container-end .end-item>form>a img {
+/* .listsContainer .listsContainer-con .listsContainer-end .end-item>form>a img {
   width: 100%;
   height: auto;
   display: block;
