@@ -11,6 +11,7 @@
     /* align-items: center; */
     row-gap: 20px;
     padding: 50px 0 10px 20px;
+    background-color: rgba(4, 2, 4, 0.87);
 }
 .leftNavBarCon .leftNavBarCon-lists>*{
     height: auto;
