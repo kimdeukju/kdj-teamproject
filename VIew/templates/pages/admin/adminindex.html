@@ -6,17 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/admin/adminindex.css">
-
-    <script src="/static/js/admin/adminindex.js" defer></script>
-    <script src="/static/js/common/adminArtistHeader.js" defer></script>
-    <script src="/static/js/common/footer.js" defer></script>
+    <script src="/static/js/admin/admin.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
-    <!-- AdminArtistHeader 들어감 -->
-    <div class="header" th:insert="/pages/common/Header :: header">
-        <div class="header-con" th:fragment="header">
+    <!-- adminHeader 들어감 -->
+    <div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">
+        <div class="adminHeader-con" th:fragment="adminHeader">
             <div class="gnb">
                 <div class="logo"><a th:href="@{/home}"><img src="/static/img/common/head/infinity.png"
                             alt="LogoImage"></a>
@@ -30,8 +27,9 @@
                                         <li><a th:href="@{/page/itemList}">Tracks</a></li>
                                         <li><a th:href="@{/#}">Board</a></li>
                                         <li><a th:href="@{/#}">Members</a></li>
-                                        <li><a th:href="@{/#}">FAQ Lists</a></li>
-                                        <li><a th:href="@{/#}">Admin Info</a></li>
+                                        <li><a th:href="@{/#}">FAQ</a></li>
+                                        <li><a th:href="@{/#}">Employees</a></li>
+                                        <li><a th:href="@{/#}">AdminInfo</a></li>
                                     </ul>
                                 </div>
                                 <div class="right-menu hide2">
