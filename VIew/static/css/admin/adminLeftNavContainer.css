@@ -1,5 +1,11 @@
 @import url(/static/css/common/reset.css);
 
+.hideLeftNavContents{
+    visibility: hidden;
+    position: absolute;
+}
+
+
 
 /* 전체 글자 크기를 0.6rem으로 정해놓아서, height: auto 설정에 따라
 높이를 맞추었다.
@@ -8,7 +14,7 @@
     width: auto;
     height: auto;
     padding-top: 20px;
-    font-size: 0.6rem;
+    font-size: auto;
     display: flex;
     flex-direction: column;
 }
@@ -16,11 +22,13 @@
     height: auto;
     padding: 5px;
     width: auto;
+    position: relative;
 }
 .leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(1){
     font-size: 20px;
     color: white;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 .leftNavBarCon .leftNavBarCon-lists>*>*:nth-child(2){
     padding-left: 50px;

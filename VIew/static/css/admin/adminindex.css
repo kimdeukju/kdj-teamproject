@@ -24,13 +24,12 @@ body{
     bottom: -1000px;
     top: 50px;
     left: 0;
-    font-size: 1rem;
     background-color: rgba(2, 2, 2, 0.70);
 }
 
 .adminMain .adminMain-con .rightShowContainer{
     position: absolute;
-    left: 232.43px;
+    left: 311.88px;
     right: 40px;
     top: 70px;
     z-index: 1;

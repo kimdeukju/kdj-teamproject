@@ -42,6 +42,7 @@
 .adminHeader .adminHeader-con .gnb .main-menu-con>ul>li{
     display: flex;
     flex-grow: 1;
+    cursor: pointer;
 }
 .adminHeader .adminHeader-con .gnb .main-menu-con>ul>li>div{
     padding: 0 30px;
