@@ -9,30 +9,29 @@ body{
 
 .adminMain{
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 .adminMain .adminMain-con{
     width: 100%;
-    height: 100%;
-    display: flex;
+    height: auto;
+    position: relative;
 }
 
 .adminMain .adminMain-con .leftNavBarCon{
-    flex:1;
-    height: 100%;
-    background-color: rgba(2, 2, 2, 0.70);
-    font-size: 0.85rem;
     position: fixed;
+    height: auto;
     z-index: 1;
-    top: 0;
+    bottom: -1000px;
+    top: 50px;
     left: 0;
+    font-size: 1rem;
+    background-color: rgba(2, 2, 2, 0.70);
 }
 
 .adminMain .adminMain-con .rightShowContainer{
-    flex: 6;
-    margin-left: 260.09px;
     position: absolute;
+    left: 232.43px;
+    right: 40px;
+    top: 70px;
     z-index: 1;
-    top: 50px;
-    padding: 20px 40px;
 }
