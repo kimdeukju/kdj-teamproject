@@ -4,60 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>COMMUNITY</title>
-  <link rel="stylesheet" href="/static/css/board/list.css">
-  <script src="/static/js/board/boardindex.js" defer></script>
-  <script src="/static/js/board/writeboard.js" defer></script>
-  <script src="/static/js/board/comment.js" defer></script>
-  <script src="/static/js/common/header.js" defer></script>
-  <script src="/static/js/common/footer.js" defer></script>
-  <script src="/static/js/board/detailBoard.js" defer></script>
+  <link rel="stylesheet" th:href="@{/css/list.css}">
 </head>
 
 <body>
-  <div class="header" th:insert="/pages/common/Header :: header">
-    <div class="header-con" th:fragment="header">
-      <div class="gnb">
-        <div class="logo"><a th:href="@{/home}"><img src="/static/img/common/head/infinity.png" alt="LogoImage"></a>
-        </div>
-        <div class="main-menu-con">
-          <ul>
-            <li>
-              <div class="li-con">
-                <div class="left-menu">
-                  <ul>
-                    <li><a th:href="@{/page/itemList}">Tracks</a></li>
-                    <li><a th:href="@{/#}">Works</a></li>
-                    <li><a th:href="@{/#}">FAQ</a></li>
-                    <li><a th:href="@{/#}">About</a></li>
-                    <li><a th:href="@{/#}">Contact</a></li>
-                  </ul>
-                </div>
-                <div class="right-menu hide2">
-                  <input type="text" id="searchBar" size="68" placeholder="Search beats">
-                </div>
-              </div>
-              <div class="s-img">
-                <img src="/static/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
-              </div>
-            </li>
-            <li class="li-last">
-              <a th:href="@{/#}">
-                <img src="/static/img/common/head/shopping-bag.png" alt="shoppingBag">
-              </a>
-              <a th:href="@{/#}">
-                <img src="/static/img/common/head/login.png" alt="login">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- <div th:replace="~{/pages/common/Header :: header}"></div> -->
 
+  <div class="container">
+    <div class="container-con">
 
-  <div class="listsContainer">
-    <!-- 전체 리스트 -->
-    <div class="listsContainer-con">
       <div class="title">
         <!--페이지 타이틀-->
         <h1>Community</h1>
@@ -75,242 +30,38 @@
         </div>
 
         <div class="boardlist">
-          <ul>
-            <!--th:each 사용, 실제 DB에서 불러올 글 목록-->
-            <li>1</li>
-            <li style="cursor:pointer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque aspernatur in
-              cumque beatae sunt dolores
-              tempore totam optio doloremque, nulla, autem id architecto. Voluptatem labore fugit necessitatibus fuga,
-              quidem nobis?</li>
-            <li>허인경</li>
-            <li>30</li>
-            <li>2023.02.17</li>
-          </ul>
+          <th:block th:each="list: ${boardList}">
+            <ul>
+              <!--th:each 사용, 실제 DB에서 불러올 글 목록-->
+              <li th:text="${list.no}"></li>
+              <li th:text="${list.title}"></li>
+              <li th:text="${list.writer}"></li>
+              <li th:text="${list.view}"></li>
+              <li th:text="*{#temporals.format(list.createTime, 'HH:mm:ss')}"></li>
+            </ul>
+          </th:block>
         </div>
       </div>
 
-      <div class="listsContainer-end">
+      <div class="container-end">
         <div class="end-item">
           <!--페이징 인덱스, 검색창-->
-          <a href="">WRITE</a>
+          <a th:href="@{/board/write}">WRITE</a>
           <form action="#" method="get">
             <select name="" id="">
               <option value="title">제목</option>
               <option value="writer">작성자</option>
             </select>
             <input type="text" name="search" id="search" class="searchtext" placeholder="Search">
-            <!-- <a href="#" class="searchbtn"><img src="/static/img/searchicon.png" alt="searchicon"></a> -->
-            <input type="image" src="/static/img/board/searchicon.png" alt="" class="submitbtn">
+            <input type="image" src="/static/img/searchicon.png" alt="" class="submitbtn">
           </form>
         </div>
       </div>
 
     </div>
-
-    <!-- list의 한 게시글에 대한 자세한 내용 보여주기 -->
-    <!-- 게시글 높이 넓게 하고, 댓글 입력 창 높이 줄이고, 댓글의 column 없애기 -->
-    <div class="detailContainer hide">
-      <div class="detailContainer-con">
-        <div class="board-con">
-          <div class="boardview">
-            <ul>
-              <!-- <li>th:text="${제목 변수(board.title)}"</li>
-              <li>th:text="${작성자 변수(board.writer)}"</li>
-              <li>th:text="${작성시간 변수(board.creatTime)}"</li>
-              <li>th:text="${내용 변수(board.content)}"</li> -->
-              <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-              <li class="li1">
-                <span><img src="/static/img/board/usericon.png" alt=""> 허인경</span>
-                <span>15:50</span>
-              </li>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque aspernatur in cumque beatae sunt
-                dolores
-                tempore totam optio doloremque, nulla, autem id architecto. Voluptatem labore fugit necessitatibus fuga,
-                quidem nobis?</li>
-            </ul>
-          </div>
-
-          <div class="btns">
-            <!--로그인&해당 회원만 보이도록 validation 처리-->
-            <ul>
-              <li class="btnli1">
-                <input type="button" value="🤍 I LIKE IT">
-              </li>
-              <li class="btnli2">
-                <input type="button" value="COMMENTS">
-                <input type="button" value="BACK TO LISTS" style="width: auto">
-                <input type="button" value="MODIFY">
-                <input type="button" value="DELETE">
-              </li>
-            </ul>
-          </div>
-
-        </div>
-        <!--댓글창 붙이기-->
-        <div class="comment">
-          <div class="comment-con">
-            <form action="writeComment" class="commentInputCon" method="get">
-              <ul class="commentInput">
-                <li>
-                  <textarea name="commentsData" id="commentsInputData" placeholder="Type comments" cols="20px"
-                    rows="3px"></textarea>
-                </li>
-                <li>
-                    <button type="button" class="commentSubmit">Write</button>
-                </li>
-              </ul>
-            </form>
-            <div class="comment-data hide1">
-              <div class="comment-column">
-                <ul class="column">
-                  <!-- <li>
-                              <div>No</div>
-                          </li> -->
-                  <li>
-                    <div>writer</div>
-                  </li>
-                  <li>
-                    <div>text</div>
-                  </li>
-                  <li>
-                    <div>time</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="comment-lists">
-                <ul class="lists">
-                  <!-- <li>
-                          <div>1</div>
-                      </li> -->
-                  <li>
-                    <div>Julie</div>
-                  </li>
-                  <li>
-                    <div class="texts">Hey this song is amazing. I can listen to this one all day long. I really
-                      like how you melted your charateric feature into this awesome tune. Keep on making such
-                      good
-                      musics!</div>
-                  </li>
-                  <li>
-                    <div>2023-02-16 19시 23분</div>
-                  </li>
-                </ul>
-                <ul class="lists">
-                  <!-- <li>
-                          <div>1</div>
-                      </li> -->
-                  <li>
-                    <div>Julie</div>
-                  </li>
-                  <li>
-                    <div class="texts">Hey this song is amazing. I can listen to this one all day long. I really
-                      like how you melted your charateric feature into this awesome tune. Keep on making such
-                      good
-                      like how you melted your charateric feature into this awesome tune. Keep on making such
-                      good
-                      good
-                      musics!</div>
-                  </li>
-                  <li>
-                    <div>2023-02-16 19시 23분</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- board에 글쓰기 -->
-    <div class="writeContainer hide">
-      <div class="writeContainer-con">
-
-        <div class="write-form">
-          <!--유효성 검사 작업 추가 필요-->
-          <!--th:if / th:errors-->
-          <!--제목이랑 내용에 추가하기-->
-          <form action="" method="post">
-            <ul>
-              <li class="li1">
-                <input type="text" name="title" id="title" placeholder="TITLE">
-              </li>
-
-              <li class="li2">
-                <img src="/static/img/board/youtubeicon.png" alt="youtube-icon">
-                <input type="url" name="youtube" id="youtube" placeholder="youtube url" class="li2sub">
-
-                <label>
-                  <img src="/static/img/board/foldericon.png" alt="folder-icon"> FILE
-                  <input type="file" name="file" id="file" class="li2sub2" style="display: none;">
-                </label>
-              </li>
-
-              <li class="li3">
-                <textarea name="content" id="content" cols="30" rows="10" placeholder=""></textarea>
-              </li>
-
-              <li class="li4">
-                <a href="">BACK</a>
-                <input type="submit" value="WRITE" class="write">
-              </li>
-            </ul>
-          </form>
-        </div>
-
-      </div>
-    </div>
   </div>
 
-
-
-  <div class="footer" th:insert="/pages/common/Footer :: footer">
-    <div class="footer-con">
-      <div class="detail-con">
-        <div class="logo">
-          <a href="">
-            <h1>Logo</h1>
-          </a>
-        </div>
-
-        <ul class="contactInfo">
-          <li>
-            <ul>
-              <li><a th:href="@{#}">Home</a></li>
-              <li><a th:href="@{#}">Tracks</a></li>
-              <li><a th:href="@{#}">Works</a></li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li><a th:href="@{#}">FAQ</a></li>
-              <li><a th:href="@{#}">About</a></li>
-              <li><a th:href="@{#}">Contact</a></li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li><a th:href="@{#}">Licensing Info</a></li>
-              <li><a th:href="@{#}">Terms of use</a></li>
-              <li><a th:href="@{#}">Privacy policy</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="socialContactPoint">
-          <li><a href="{#}" target="_blank"><img src="/static/img/common/footer/facebook.png" alt="facebook"></a>
-          </li>
-          <li><a href="{#}" target="_blank"><img src="/static/img/common/footer/youtube.png" alt="youtube"></a>
-          </li>
-          <li><a href="{#}" target="_blank"><img src="/static/img/common/footer/instagram.png" alt="instagram"></a>
-          </li>
-          <li><a href="{#}" target="_blank"><img src="/static/img/common/footer/soundcloud.png" alt="soundcloud"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <!-- <div th:replace="~{/pages/common/Footer :: footer}"></div> -->
 </body>
 
 </html>
