@@ -62,20 +62,39 @@
     display: flex;
     justify-content: center;
 } */
-.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu ul{
+.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul{
     display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
 }
-.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu ul>li{
+.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul>li{
     flex:1;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 50px;
     padding: 0 20px;
     width: auto;
 }
+.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul>li>a{
+    height: 50px;
+    position: relative;
+}
+.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul>li .topMenuOptions{
+    border: 1px solid black;
+    background-color: rgb(2, 2, 2, 0.99);
+    position: absolute;
+    width: 200px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .left-menu>ul>li .topMenuOptions>*>*>*{
+    color: white;
+}
+
 .adminHeader .adminHeader-con .gnb .main-menu-con>ul>li .li-con .right-menu{
     display: flex;
     align-items: center;

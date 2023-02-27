@@ -1,36 +1,38 @@
 @import url(/static/css/common/reset.css);
 @import url(/static/css/admin/adminHeader.css);
 @import url(/static/css/admin/adminLeftNavContainer.css);
+@import url(/static/css/admin/adminRightContainer.css);
 
 /* Admin 페이지에서는 adminArtistHeader, 메인, footer의 row-gap을 줄인다. */
 body{
     row-gap: 0;
 }
 
+.hideLeftNavContents{
+    visibility: hidden;
+    position: absolute;
+    /* transition: all 0.5s; */
+}
+
+
 .adminMain{
     width: 100%;
     height: auto;
 }
 .adminMain .adminMain-con{
+    position: absolute;
+    top: 50px;
     width: 100%;
-    height: auto;
-    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: stretch;
 }
 
 .adminMain .adminMain-con .leftNavBarCon{
-    position: fixed;
-    height: auto;
-    z-index: 1;
-    bottom: -1000px;
-    top: 50px;
-    left: 0;
+    flex: 1;
     background-color: rgba(2, 2, 2, 0.70);
 }
 
-.adminMain .adminMain-con .rightShowContainer{
-    position: absolute;
-    left: 311.88px;
-    right: 40px;
-    top: 70px;
-    z-index: 1;
+.adminMain .adminMain-con .rightMainContainer{
+    flex: 5;
 }
