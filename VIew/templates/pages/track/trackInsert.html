@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/track/trackInsert.css">
+  <script src="/js/track/trackInsert.js" defer></script>
+  <title>TrackInsert</title>
+</head>
+
+<form th:action="@{/trackAdd}" method="post" th:object="${itemDto}" enctype="multipart/form-data">
+
+  <div class="container">
+    <div class="container-con">
+      <div class="box">
+        <div class="track-con">
+          <div class="track-name1">
+            <label>Attach pictures</label>
+
+            <div class="file">
+              <input type="file" th:field="*{itemFile}">
+            </div>
+
+          </div>
+          <div class="img"></div>
+
+          <div class="track-name">
+            <label>title</label>
+            <input type="text" th:field="*{title}">
+          </div>
+          <div class="track-name">
+            <label>duration</label>
+            <input type="text" th:field="*{duration}">
+          </div>
+          <div class="track-name">
+            <label>bpm</label>
+            <select th:field="*{bpm}">
+              <option th:value="1" th:text="|Select bpm ...|">Select bpm ...</option>
+              <option th:value="63" th:text="63">63</option>
+              <option th:value="75" th:text="75">75</option>
+              <option th:value="81" th:text="81">81</option>
+              <option th:value="97" th:text="97">97</option>
+              <option th:value="108" th:text="108">108</option>
+              <option th:value="126" th:text="126">126</option>
+            </select>
+          </div>
+          <div class="track-name">
+            <label>producer</label>
+            <input type="text" th:field="*{producer}">
+          </div>
+          <div class="track-name">
+            <label>genre</label>
+            <select th:field="*{genre}">
+              <option th:value="1" th:text="|Select genre ...|">Select genre ...</option>
+              <option th:value="Rnb" th:text="Rnb">Rnb</option>
+              <option th:value="Soul" th:text="Soul">Soul</option>
+              <option th:value="Pop" th:text="Pop">Pop</option>
+              <option th:value="Funk" th:text="Funk">Funk</option>
+              <option th:value="Trap" th:text="Trap">Trap</option>
+              <option th:value="Reggae" th:text="Reggae">Reggae</option>
+            </select>
+          </div>
+          <div class="track-name">
+            <label>price</label>
+            <input type="text" th:field="*{price}">
+          </div>
+          <div class="button">
+            <button type="submit">Registration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+
+</body>
+
+</html>

@@ -26,9 +26,9 @@ public class ItemEntity extends BaseEntity{
 
     @Column(nullable = false)
     private String title; //track title
-    private int duration; //불확실
+    private String duration; //불확실
     private String producer;
-    private int price; //$
+    private String price; //$
     private int bpm;
     private String genre; //장르
 

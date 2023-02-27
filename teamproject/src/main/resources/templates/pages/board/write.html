@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WRITE</title>
+<<<<<<< HEAD
+  <link rel="stylesheet" th:href="@{/css/write.css}">
+=======
+  <link rel="stylesheet" href="/static/css/board/write.css">
+>>>>>>> c5ebcf574b695412d0bfc98a2b8feabdc20b1907
+</head>
+
+<body>
+  <div class="writeContainer">
+    <div class="writeContainer-con">
+
+      <div class="write-form">
+        <!--유효성 검사O-->
+        <form th:action="@{/board/write}" th:object="${boardDto}" method="post">
+          <ul>
+            <li class="li1">
+              <input type="text" th:field="*{title}" placeholder="TITLE">
+            </li>
+            <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li>
+
+            <!--여기에 여백 넣기(윗부분)-->
+            <li class="li2">
+              <img th:src="@{/img/board/youtubeicon.png}" alt="youtube-icon">
+              <input type="url" th:field="*{youtube}" placeholder="insert url" class="li2sub">
+
+              <label>
+                <img th:src="@{/img/board/foldericon.png}" alt="folder-icon">
+                <!-- <input type="file" th:field="*{file}" class="li2sub2" style="display: none;"> -->
+              </label>
+            </li>
+
+            <li class="li3">
+              <textarea name="content" th:field="*{content}" id="content" cols="30" rows="10" placeholder=""></textarea>
+            </li>
+            <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li>
+
+            <!--여기에 여백 넣기(윗부분)-->
+            <li class="li4">
+              <a th:href="@{/board/}">BACK</a>
+              <input type="submit" value="WRITE" class="write">
+            </li>
+          </ul>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

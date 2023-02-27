@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1seog2jo Join</title>
+  <!-- <link rel="stylesheet" th:href="@{/css//join.css}"> -->
+  <link rel="stylesheet" href="../../static/css/join/join.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="join">
+      <div class="join-form">
+        <form th:action="@{/member/join}" method="post" th:object="${memberDto}">
+          <ul>
+
+            <li class="s1">Sign Up</li>
+
+            <li class="s2"><input type="email" th:field="*{email}" name="userId" id="userId" placeholder="Enter Id"
+                class="text" minlength="4" maxlength="10">
+            </li>
+
+            <li class="s2"><input type="password" th:field="*{password}" name="userPw" id="userPw"
+                placeholder="Enter Password" class="text" minlength="4" maxlength="10">
+            </li>
+
+            <li class="s2"><input type="text" th:field="*{address}" name="address" id="address"
+                placeholder="Enter Address" class="text" minlength="2" maxlength="3">
+            </li>
+
+            <li class="s2"><input type="text" id="yy" placeholder="Enter Name" class="int" minlength="8" maxlength="8">
+            </li>
+            <li>
+              <input type="text" class="s3" name="phone" id="phone" readonly value="010"> -
+              <input type="text" id="phone" class="s5" maxlength="4"> -
+              <input type="text" id="phone" class="s5" maxlength="4">
+            </li>
+
+            <li class="s4">
+              <input type="submit" class="joinOk" value="sign up">
+            </li>
+      </div>
+
+
+      </ul>
+      </form>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

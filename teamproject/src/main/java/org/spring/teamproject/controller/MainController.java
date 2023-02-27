@@ -10,7 +10,7 @@ public class MainController {
 
     @GetMapping("/")
     public String mainView(){
-        return "/pages/main";
+        return "/pages/MainIndex";
     }
 
     @GetMapping("/login")

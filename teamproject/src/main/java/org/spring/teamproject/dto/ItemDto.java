@@ -2,6 +2,7 @@ package org.spring.teamproject.dto;
 
 import lombok.*;
 import org.spring.teamproject.entity.CartItemEntity;
+import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.entity.MemberEntity;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,9 +17,9 @@ public class ItemDto {
 
     private Long no;
     private String title; //track title
-    private int duration; //불확실
+    private String duration; //불확실
     private String producer;
-    private int price; //$
+    private String price; //$
     private int bpm;
     private String genre; //장르
     private MemberEntity member;
@@ -29,5 +30,18 @@ public class ItemDto {
     private String fileName;
     private String newFileName;
 
+
+    public static ItemDto toItemDto(ItemEntity itemEntity){
+
+        ItemDto itemDto=new ItemDto();
+        itemDto.setTitle(itemEntity.getTitle());
+        itemDto.setDuration(itemEntity.getDuration());
+        itemDto.setBpm(itemEntity.getBpm());
+        itemDto.setProducer(itemEntity.getProducer());
+        itemDto.setGenre(itemEntity.getGenre());
+        itemDto.setPrice(itemEntity.getPrice());
+
+        return itemDto;
+    }
 
 }
