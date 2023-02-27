@@ -7,13 +7,15 @@ import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.entity.MemberEntity;
 import org.spring.teamproject.repository.FileRepository;
 import org.spring.teamproject.repository.ItemRepository;
-import org.spring.teamproject.repository.MemberRepository;
+//import org.spring.teamproject.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -23,7 +25,7 @@ public class ItemService {
 
     private final ItemRepository itemRepository;
     private final FileRepository fileRepository;
-    private final MemberRepository memberRepository;
+//    private final MemberRepository memberRepository;
 
 
     @Transactional
@@ -33,10 +35,10 @@ public class ItemService {
             MultipartFile itemFile = itemDto.getItemFile(); //업로드 할 파일 get
             String fileName = itemFile.getOriginalFilename(); //업로드 할 파일명 get
 
-            UUID uuid = UUID.randomUUID(); //파일명 앞에 들어갈 랜덤코드 (중복을위
-            String newFileName = uuid + "_" + fileName; //파일명 커스텀 ex) DSAhd + _ + img_jpg
+//            UUID uuid = UUID.randomUUID(); //파일명 앞에 들어갈 랜덤코드 (중복을위
+            String newFileName =  fileName; //파일명 커스텀 ex) DSAhd + _ + img_jpg
 
-            String filepath = "C:/projectfile"+newFileName; //상품 추가할 때 실제로 넣을 파일들 경로 (config package -> UploadPath 참고)
+            String filepath = "C:/projectfile/"+newFileName; //상품 추가할 때 실제로 넣을 파일들 경로 (config package -> UploadPath 참고)
             itemFile.transferTo(new File(filepath)); //커스텀 파일 생성 (exception 해줘야함)
 
 
@@ -53,6 +55,15 @@ public class ItemService {
         }
 
 
+    public List<ItemDto> itemList() {
+        List<ItemDto> itemDtoList=new ArrayList<>();
 
+        List<ItemEntity> itemEntityList=itemRepository.findAll();
 
+        for(ItemEntity itemEntity:itemEntityList){
+            itemDtoList.add(ItemDto.toItemDto(itemEntity));
+        }
+
+        return itemDtoList;
+    }
 }

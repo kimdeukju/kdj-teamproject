@@ -20,32 +20,32 @@ public class TrackController {
 
     private final ItemService itemService;
 
-    @GetMapping("/admin/trackAdd")
+    @GetMapping("/trackAdd")
     public String addView(Model model) {
         model.addAttribute("itemDto", new ItemDto());
 
-        return "/pages/admin/trackInsert";
+        return "/pages/track/trackInsert";
     }
 
     @PostMapping("/trackAdd")
     public String addmet(@Valid ItemDto itemDto, BindingResult bindingResult) throws IOException {
 
         if (bindingResult.hasErrors()) {
-            return "/pages/admin/trackInsert";
+            return "/pages/track/trackInsert";
         }
         itemService.itemInsert(itemDto);
 
-        return "redirect:/trackAdd";
+        return "redirect:/trackList";
     }
 
-    @GetMapping("/tracks")
+    @GetMapping("/trackList")
     public String itemList(Model model) {
 
-        List<ItemDto> itemDtoList = new ArrayList<>();
+        List<ItemDto> itemDtoList = itemService.itemList();
 
         model.addAttribute("itemDtoList", itemDtoList);
 
-        return "itemList";
+        return "pages/track/trackList";
     }
 }
 

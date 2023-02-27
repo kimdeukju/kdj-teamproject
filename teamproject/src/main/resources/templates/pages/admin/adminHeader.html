@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script src="/static/js/admin/admin.js" defer></script>
+</head>
+
+<div class="adminHeader" th:insert="/pages/common/adminHeader :: adminHeader">
+    <div class="adminHeader-con" th:fragment="adminHeader">
+        <div class="gnb">
+            <div class="logo"><a th:href="@{/home}"><img src="/static/img/common/head/infinity.png"
+                        alt="LogoImage"></a>
+            </div>
+            <div class="main-menu-con">
+                <ul>
+                    <li>
+                        <div class="li-con">
+                            <div class="left-menu">
+                                <ul>
+                                    <li><a th:href="@{/page/itemList}">Tracks</a></li>
+                                    <li><a th:href="@{/#}">Board</a></li>
+                                    <li><a th:href="@{/#}">Members</a></li>
+                                    <li><a th:href="@{/#}">FAQ Lists</a></li>
+                                    <li><a th:href="@{/#}">Admin Info</a></li>
+                                </ul>
+                            </div>
+                            <div class="right-menu hide2">
+                                <input type="text" id="searchBar" size="68" placeholder="Search beats">
+                            </div>
+                        </div>
+                        <!-- <div class="s-img">
+                            <img src="/static/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
+                        </div> -->
+                    </li>
+                    <li class="li-last">
+                        <a th:href="@{/#}">
+                            <div class="currentTime"></div>
+                        </a>
+                        <a th:href="@{/#}">
+                            <div class="myImg">Charlie</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

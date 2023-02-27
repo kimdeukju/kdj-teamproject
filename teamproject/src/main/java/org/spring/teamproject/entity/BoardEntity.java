@@ -27,8 +27,8 @@ public class BoardEntity {
     private String title;
     private String content;
     private String youtubeLink;
-    private int like;
-    private int view;
+    private int likes;
+    private int views;
 
     @OneToMany(mappedBy = "board",cascade = CascadeType.REMOVE)
     private List<ReplyEntity> replyEntityList = new ArrayList<>();
