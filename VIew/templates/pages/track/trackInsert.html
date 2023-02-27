@@ -10,48 +10,53 @@
   <title>TrackInsert</title>
 </head>
 
-<div class="container">
+<form th:action="@{/admin/track/add}" method="post" th:object="${itemDto}" enctype="multipart/form-data">
+
+  <div class="container">
   <div class="container-con">
     <div class="box">
       <div class="track-con">
         <div class="track-name1">
           <label>Attach pictures</label>
+
           <div class="file">
-            <input type="file">
+            <input type="file" th:field="*{itemFile}">
           </div>
+
         </div>
         <div class="img"></div>
+
         <div class="track-name">
           <label>title</label>
-          <input type="text">
+          <input type="text" th:field="*{title}">
         </div>
         <div class="track-name">
           <label>duration</label>
-          <input type="text" name="itemName" id="itemName">
+          <input type="text" th:field="*{duration}">
         </div>
         <div class="track-name">
           <label>bpm</label>
-          <select name="bpm" id="bpm">
-            <option value="">Select bpm ...</option>
-            <option value="63">63</option>
-            <option value="75">75</option>
-            <option value="81">81</option>
-            <option value="97">97</option>
-            <option value="108">108</option>
-            <option value="126">126</option>
+          <select th:field="*{bpm}">
+            <option th:value="1" th:text="|Select bpm ...|">Select bpm ...</option>
+            <option th:value="63" th:text="63">63</option>
+            <option th:value="75" th:text="75">75</option>
+            <option th:value="81" th:text="81">81</option>
+            <option th:value="97" th:text="97">97</option>
+            <option th:value="108"th:text="108">108</option>
+            <option th:value="126"th:text="126">126</option>
           </select>
         </div>
         <div class="track-name">
           <label>producer</label>
-          <input type="text">
+          <input type="text" th:field="*{producer}">
         </div>
         <div class="track-name">
           <label>genre</label>
-          <input type="text">
+          <input type="text" th:field="*{genre}">
         </div>
         <div class="track-name">
           <label>price</label>
-          <input type="text">
+          <input type="text" th:field="*{price}">
         </div>
         <div class="button">
           <button type="submit">Registration</button>
@@ -61,6 +66,8 @@
   </div>
 
 </div>
+
+</form>
 
 </body>
 
