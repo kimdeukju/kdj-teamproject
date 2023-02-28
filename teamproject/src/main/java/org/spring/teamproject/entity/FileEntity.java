@@ -28,6 +28,7 @@ public class FileEntity extends BaseEntity{
     @JoinColumn(name = "item_no")
     private ItemEntity file_item;
 
+
     public static FileEntity fileUpload(ItemEntity itemEntity, String fileName, String newFileName){
 
         FileEntity fileEntity = new FileEntity();

@@ -10,10 +10,12 @@
 	align-items: center;
 }
 .container .container-con {
-	width: 1166px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 .container .container-con .track {
-	width: 100%;
+	width: 1166px;
 }
 .container .container-con .track-filters {
 	width: 100%;
@@ -150,23 +152,31 @@
 	height: 40px;
 	line-height: 40px;
 }
-.container .item-con .item .items ul li:nth-child(1) {
+.container .item-con .item .items ul > li:nth-child(1) {
 	flex: 1;
 	max-width: 40px;
 	padding: 0 10px;
 	box-sizing: border-box;
 	margin-right: 45px;
 }
-.container .item-con .item .items ul li:nth-child(1) img {
+.container .item-con .item .items ul > li:nth-child(1) img {
 	width: 40px;
 }
-.container .item-con .item .items ul li:nth-child(2) {
+.container .item-con .item .items ul > a {
 	flex: 2;
 	display: flex;
 	justify-content: flex-start;
 	max-width: 300px;
 	min-width: 50px;
 	margin-right: 35px;
+	cursor: default;
+}
+.container .item-con .item .items ul > a > li {
+	width: auto;
+}
+.container .item-con .item .items ul > a > li:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }
 .container .item-con .item .items ul li:nth-child(3) {
 	flex: 1;
@@ -204,7 +214,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 1px 3px #cccccc;
+	box-shadow: 0px 1px 3px 1px #cccccc;
 	border-radius: 3px;
 	line-height: 40px;
 }
@@ -228,4 +238,18 @@
 	height: 15px;
 	line-height: 15px;
 	margin-right: 10px;
+}
+.container .item-con .item .paging {
+	width: 100%;
+	height: auto;
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+.container .item-con .item .paging a {
+	max-width: 50px;
+}
+.container .item-con .item .paging span {
+	max-width: 10px;
 }

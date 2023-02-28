@@ -66,18 +66,30 @@
           </ul>
         </div>
         <div class="items">
-          <ul th:each="list: ${itemDtoList}">
-            <li><img th:src="@{|/upload/${list.newFileName}|}" alt=""></li>
-            <li th:text="${list.title}"></li>
+          <ul th:each="list: ${itemDtoPage}">
+            <li th:if="${list.attachFile==1}"><img th:src="@{|/upload/${list.newFileName}|}" alt=""></li>
+            <a th:href="@{|/trackDetail/${list.no}|}"><li th:text="${list.title}"></li></a>
             <li th:text="${list.duration}"></li>
             <li th:text="${list.bpm}"></li>
             <li th:text="${list.producer}"></li>
             <li th:text="${list.genre}"></li>
             <li><a th:href="@{#}"><img src="/img/track/share.png" alt="share-icon"></a></li>
-            <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png"
-                  alt="shopping-bag-icon"></a><div th:text="${list.price}"></div>
+            <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
+              <div th:text="${list.price}"></div>
             </li>
           </ul>
+        </div>
+        <div class="paging">
+          <a th:href="${itemDtoPage.first} ? '#' : @{/trackList(page=${itemDtoPage.number-1})}">
+            << </a>
+              <th:block th:each="page: ${#numbers.sequence(startPage, endPage)}">
+                <span th:if="${page == nowPage}" th:text="${page}" th:classappend="class1"
+                  style="color: #000000;"></span>
+                <span th:unless="${page == nowPage}">
+                  <a th:href="@{/trackList(page=${page-1})}" style="color: #00000059;" th:text="${page}"></a>
+                </span>
+              </th:block>
+              <a th:href="${itemDtoPage.last} ? '#' : @{/trackList(page=${itemDtoPage.number + 1})}">>></a>
         </div>
       </div>
     </div>

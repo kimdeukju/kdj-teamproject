@@ -45,11 +45,14 @@ public class ItemEntity extends BaseEntity{
     @OneToMany(mappedBy = "item",cascade = CascadeType.REMOVE)
     private List<CartItemEntity> itemEntityList = new ArrayList<>();
 
+    @Column(nullable = false)
+    private int attachFile;//파일 유무(1,0)
 
 
     public static ItemEntity toItemEntity(ItemDto itemDto) {
 
         ItemEntity itemEntity = new ItemEntity();
+//        itemEntity.setNo(itemDto.getNo());
         itemEntity.setTitle(itemDto.getTitle());
         itemEntity.setDuration(itemDto.getDuration());
         itemEntity.setProducer(itemDto.getProducer());
@@ -57,6 +60,22 @@ public class ItemEntity extends BaseEntity{
         itemEntity.setBpm(itemDto.getBpm());
         itemEntity.setGenre(itemDto.getGenre());
         itemEntity.setItem_member(itemDto.getMember());
+        itemEntity.setAttachFile(0);
+
+        return itemEntity;
+    }
+    public static ItemEntity toItemFileEntity(ItemDto itemDto) {
+
+        ItemEntity itemEntity = new ItemEntity();
+//        itemEntity.setNo(itemDto.getNo());
+        itemEntity.setTitle(itemDto.getTitle());
+        itemEntity.setDuration(itemDto.getDuration());
+        itemEntity.setProducer(itemDto.getProducer());
+        itemEntity.setPrice(itemDto.getPrice());
+        itemEntity.setBpm(itemDto.getBpm());
+        itemEntity.setGenre(itemDto.getGenre());
+        itemEntity.setItem_member(itemDto.getMember());
+        itemEntity.setAttachFile(1);
 
         return itemEntity;
     }

@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class UploadPath implements WebMvcConfigurer {
 
-    String saveFile = "file:///C:/projectfile";
+    String saveFile = "file:///C:/projectfile/";
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>itemDetail</title>
-  <link rel="stylesheet" href="/static/css/track/itemDetail.css">
-  <script src="/static/js/track/itemDetail.js" defer></script>
+  <link rel="stylesheet" href="/css/track/trackDetail.css">
+  <script src="/js/track/trackDetail.js" defer></script>
 </head>
 
 <body>
@@ -15,34 +15,34 @@
     <div class="container-con">
       <div class="track-detail-top">
         <div class="detail-top">
-          <div class="top-right">
-            <img src="/static/img/tracks/music.png" alt="music-icon">
+          <div class="top-right" th:each="list: ${dto}">
+            <img th:src="@{|/upload/${list.newFileName}|}" alt="">
           </div>
           <div class="top-left">
-            <div class="track-name">
-              <div><img src="/static/img/tracks/musicPlay.png" alt=""></div>
-              <div class="hover">Hover</div>
+            <div class="track-name" th:each="list: ${dto}">
+              <div><img src="/img/track/musicPlay.png" alt=""></div>
+              <div class="hover" th:text="${list.title}"></div>
             </div>
             <div class="company">Mixtape Seoul</div>
-            <div class="bpm-time">
+            <div class="bpm-time" th:each="list: ${dto}">
               <div class="bpm1">BPM</div>
-              <div class="bpm2">103</div>
-              <div class="time1"><img src="/static/img/tracks/time.png" alt=""></div>
+              <div class="bpm2" th:text="${list.bpm}"></div>
+              <div class="time1"><img src="/img/track/time.png" alt=""></div>
               <div class="time2">June 21, 2021</div>
             </div>
             <div class="action-tags">
               <div class="action">
-                <div class="action1">
-                  <a href="#"><img src="/static/img/tracks/shopping-bag.png" alt="shopping-bag-icon">$29.95</a>
+                <div class="action1" th:each="list: ${dto}">
+                  <a href="#"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
+                      th:text="${list.price}"></a>
                 </div>
                 <div class="action2">
-                  <a href="#"><img src="/static/img/tracks/share.png" alt="share-icon">SHARE</a>
+                  <a href="#"><img src="/img/track/share.png" alt="share-icon">SHARE</a>
                 </div>
               </div>
-              <div class="tags">
-                <a href="#">max</a>
-                <a href="#">mixtape seoul</a>
-                <a href="#">rnb</a>
+              <div class="tags" th:each="list: ${dto}">
+                <a href="#" th:text="${list.producer}"></a>
+                <a href="#" th:text="${list.genre}"></a>
               </div>
             </div>
           </div>
@@ -60,17 +60,28 @@
       </div>
       <div class="track-detail-bottom">
         <div class="detail-bottom">
-
+          <div class="item-filter">
+            <ul>
+              <li>TITLE</li>
+              <li>TIME</li>
+              <li>BPM</li>
+              <li>PRODUCER</li>
+              <li>GENRE</li>
+            </ul>
+          </div>
           <div class="introduction1">
-            <ul th:each="">
-              <li><img src="/static/img/tracks/music.png" alt="대체아이콘"></li>
-              <li th:text="${title}">Store</li>
-              <li th:text="${time}">03:02</li>
-              <li th:text="${bpm}">143</li>
-              <li th:text="${tags}"><a th:href="@{#}">tuel</a></li>
-              <li th:text="${tags}"><a th:href="@{#}">mixtape seoul</a></li>
-              <li><a th:href="@{#}"><img src="/static/img/tracks/share.png" alt="share-icon"></a></li>
-              <li><a th:href="@{#}"><img src="/static/img/tracks/shopping-bag.png" alt="shopping-bag-icon">$29.95</a>
+            <ul th:each="list: ${dto}">
+              <li th:if="${list.attachFile==1}"><img th:src="@{|/upload/${list.newFileName}|}" alt=""></li>
+              <a th:href="@{|/trackDetail/${list.no}|}">
+                <li th:text="${list.title}"></li>
+              </a>
+              <li th:text="${list.duration}"></li>
+              <li th:text="${list.bpm}"></li>
+              <li th:text="${list.producer}"></li>
+              <li th:text="${list.genre}"></li>
+              <li><a th:href="@{#}"><img src="/img/track/share.png" alt="share-icon"></a></li>
+              <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
+                <div th:text="${list.price}"></div>
               </li>
             </ul>
           </div>
