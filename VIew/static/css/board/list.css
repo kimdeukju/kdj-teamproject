@@ -136,7 +136,7 @@
 .container .container-con .boardview .boardlist>ul li:nth-child(2) {
   flex: 20;
   /* width: 750px; */
-  /*말줄임 css*/
+  /*말 줄임 css_제목 길이가 지정된 영역을 초과하면 ...으로 표시*/
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

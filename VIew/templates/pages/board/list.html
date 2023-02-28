@@ -32,9 +32,11 @@
         <div class="boardlist">
           <th:block th:each="list: ${boardList}">
             <ul>
-              <!--th:each 사용, 실제 DB에서 불러올 글 목록-->
+              <!--글 목록-->
               <li th:text="${list.no}"></li>
-              <li th:text="${list.title}"></li>
+              <li>
+                <a th:text="${list.title}" th:href="@{|/board/detail/${list.no}|}"></a>
+              </li>
               <li th:text="${list.writer}"></li>
               <li th:text="${list.view}"></li>
               <li th:text="*{#temporals.format(list.createTime, 'HH:mm:ss')}"></li>
@@ -53,7 +55,7 @@
               <option value="writer">작성자</option>
             </select>
             <input type="text" name="search" id="search" class="searchtext" placeholder="Search">
-            <input type="image" src="/static/img/searchicon.png" alt="" class="submitbtn">
+            <input type="image" th:src="@{/img/searchicon.png}" alt="" class="submitbtn">
           </form>
         </div>
       </div>
