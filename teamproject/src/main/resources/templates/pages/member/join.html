@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1seog2jo Join</title>
+    <link rel="stylesheet" th:href="@{/css/member/join.css}">
+    <!--  <link rel="stylesheet" href="../../static/css/join/join.css">-->
+</head>
+
+<body>
+<div class="container">
+    <div class="join">
+        <div class="join-form">
+            <form th:action="@{/join}" method="post" th:object="${memberDto}">
+                <ul>
+
+                    <li class="s1">Sign Up</li>
+
+                    <li class="s2"><input type="email" th:field="*{email}" name="email" id="email" placeholder="Enter Email"
+                                          class="text" minlength="4" maxlength="15">
+                        <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                    </li>
+
+                    <li class="s2"><input type="password" th:field="*{password}" name="password" id="password"
+                                          placeholder="Enter Password" class="text" minlength="4" maxlength="10">
+                        <span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    </li>
+
+                    <li class="s2"><input type="text" th:field="*{address}" name="address" id="address"
+                                          placeholder="Enter Address" class="text" minlength="1" maxlength="20">
+                        <span class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+                    </li>
+
+                    <li class="s2"><input type="text" th:field="*{userName}" id="yy" placeholder="Enter Name" class="int" minlength="2" maxlength="3">
+                        <span class="error" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+                    </li>
+                    <li class="s2">
+                        <input type="text" th:field="*{phone}" name="phone" id="phone" placeholder="Phone Number" class="s5" minlength="11" maxlength="11">
+                        <span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+                    </li>
+
+                    <li class="s4">
+                        <input type="submit" class="joinOk" value="sign up">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+
+</html>

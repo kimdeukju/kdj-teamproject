@@ -5,7 +5,7 @@
     <script src="/static/js/common/header.js" defer></script>
 </head>
 
-<div class="header" th:insert="/pages/common/Header :: header">
+<!--<div class="header" th:insert="/pages/common/Header :: header">-->
     <div class="header-con" th:fragment="header">
         <div class="gnb">
             <div class="logo"><a th:href="@{/home}"><img src="/static/img/common/head/infinity.png" alt="LogoImage"></a>
@@ -31,14 +31,26 @@
                             <img src="/static/img/common/head/magnifier.png" alt="searchImg" id="magnifier">
                         </div>
                     </li>
-                    <li class="li-last">
-                        <a th:href="@{/#}">
-                            <img src="/static/img/common/head/shopping-bag.png" alt="shoppingBag">
-                        </a>
-                        <a th:href="@{/#}">
-                            <img src="/static/img/common/head/login.png" alt="login">
-                        </a>
+                    <!-- 비로그인시 -->
+                    <li class="li-last" sec:authorize="isAnonymous()">
+                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
+                        <!--로그인a태그   -->
+                        <a th:href="@{/login}"><img src="/img/head/login.png" alt="login"></a>
                     </li>
+                    <!-- 로그인시 -->
+                    <li class="li-last" sec:authorize="isAuthenticated()">
+                        <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
+                        <!--마이페이지 a태그-->
+                        <a th:href="@{|/mypage/${#authentication.principal.username}|}"><img src="/img/head/login.png"></a>
+                    </li>
+<!--                    <li class="li-last">-->
+<!--                        <a th:href="@{/#}">-->
+<!--                            <img src="/static/img/common/head/shopping-bag.png" alt="shoppingBag">-->
+<!--                        </a>-->
+<!--                        <a th:href="@{/#}">-->
+<!--                            <img src="/static/img/common/head/login.png" alt="login">-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>
