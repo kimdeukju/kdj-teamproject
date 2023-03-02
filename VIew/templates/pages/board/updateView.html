@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MODIFY</title>
+  <link rel="stylesheet" th:href="@{/css/updateView.css}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-con">
+
+      <div class="update-form">
+
+        <form th:action="@{|/board/update/${detail.no}|}" method="post" enctype="multipart/form-data">
+          <ul>
+            <li class="li1">
+              <input type="text" th:value="${detail.title}" id="title" name="title" placeholder="TITLE" required>
+              <input type="text" th:value="${detail.no}" name="no" id="no" hidden>
+            </li>
+            <!-- <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li> -->
+
+            <li class="li2">
+              <img th:src="@{/img/board/youtubeicon.png}" alt="youtube-icon">
+              <input type="url" th:value="${detail.youtube}" id="youtube" name="youtube" placeholder="insert url"
+                class="li2sub">
+
+              <label th:for="boardFile">
+                <img th:src="@{/img/board/foldericon.png}" alt="folder-icon">
+                <input type="file" id="file" name="file" class="li2sub2">
+                <!--input:file은 보안상 value 사용이 불가-->
+                <!--input:text로 이 부분에 원래 파일 경로 이름 불러오기?-->
+              </label>
+            </li>
+
+            <li class="li3">
+              <textarea name="content" th:value="${detail.content}" id="content" cols="30" rows="10" required>
+              <img th:src="@{|/upload/${detail.newName}|}" alt=""></textarea>
+            </li>
+            <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
+
+            <li>
+              작성자(임시) <input type="text" th:value="${detail.writer}" id="writer" name="writer" readonly>
+            </li>
+
+            <li class="li4">
+              <a th:href="@{/board/}">BACK</a>
+              <input type="submit" value="WRITE" class="write">
+            </li>
+          </ul>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
