@@ -21,7 +21,7 @@
                   th:object="${memberDto}">
                 <div class="row-text">
                     <label>E-mail address</label> <br>
-                    <input type="hidden" name="id" th:value="${member.id}">
+                    <input type="hidden" name="no" th:value="${member.no}">
                     <input class="info-text" type="email" name="email"
                            minlength="4" maxlength="15" th:value="${member.email}" readonly>
                 </div>
@@ -49,7 +49,7 @@
 
                 <div class="user-up">
                     <input type="submit" value="회원수정">
-                    <button><a th:href="@{|/delete/${member.id}|}">회원탈퇴</a></button>
+                    <button><a th:href="@{|/delete/${member.no}|}">회원탈퇴</a></button>
                 </div>
             </form>
         </div>

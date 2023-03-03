@@ -23,7 +23,7 @@ public class MemberEntity extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_no")
-    private Long id;
+    private Long no;
 
     @Column(nullable = false,unique = true)
     private String email;
@@ -52,7 +52,7 @@ public class MemberEntity extends BaseEntity{
                                             PasswordEncoder passwordEncoder){
         MemberEntity memberEntity=new MemberEntity();
 
-        memberEntity.setId(memberDto.getId());
+        memberEntity.setNo(memberDto.getNo());
         memberEntity.setEmail(memberDto.getEmail());
         memberEntity.setPassword(passwordEncoder.encode(memberDto.getPassword()));
         memberEntity.setAddress(memberDto.getAddress());
@@ -65,7 +65,7 @@ public class MemberEntity extends BaseEntity{
     public static MemberEntity updateMemberEntity(MemberDto memberDto,PasswordEncoder passwordEncoder){
         MemberEntity memberEntity=new MemberEntity();
         //id정보
-        memberEntity.setId(memberDto.getId());
+        memberEntity.setNo(memberDto.getNo());
         memberEntity.setEmail(memberDto.getEmail());
         memberEntity.setPassword(passwordEncoder.encode(memberDto.getPassword()));
         memberEntity.setAddress(memberDto.getAddress());

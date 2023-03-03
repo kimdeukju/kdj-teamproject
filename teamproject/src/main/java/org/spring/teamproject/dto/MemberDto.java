@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class MemberDto {
-    private Long id;
+    private Long no;
 
     @NotBlank(message = "이메일을 입력 해주세요")
     private String email;
@@ -41,7 +41,7 @@ public class MemberDto {
 
         MemberDto memberDto=new MemberDto();
 
-        memberDto.setId(memberEntity.getId());
+        memberDto.setNo(memberEntity.getNo());
         memberDto.setEmail(memberEntity.getEmail());
         memberDto.setPassword(memberEntity.getPassword());
         memberDto.setAddress(memberEntity.getAddress());

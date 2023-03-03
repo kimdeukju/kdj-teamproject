@@ -81,9 +81,9 @@ public class MainController {
     }
 
 
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable(value = "id") Long id) {
-        int rs = memberService.deleteOk(id);
+    @GetMapping("/delete/{no}")
+    public String delete(@PathVariable(value = "no") Long no) {
+        int rs = memberService.deleteOk(no);
 
         if (rs == 1) {
             System.out.println("회원탈퇴 실패");
