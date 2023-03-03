@@ -47,10 +47,14 @@
               </select>
             </div>
           </div>
-          <div class="search-bar">
-            <img src="/img/track/search.png" alt="search-icon">
-            <input type="search" name="search" id="search" placeholder="What type of track are you looking for?">
-          </div>
+          <form th:action="@{/trackList/search}" method="get">
+            <div class="search-bar">
+              <img src="/img/track/search.png" alt="search-icon">
+              <input type="search" name="search" id="search" class="s1"
+                placeholder="What type of track are you looking for?">
+              <input type="submit" class="s2" value="search">
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -67,13 +71,14 @@
         </div>
         <div class="items">
           <ul th:each="list: ${itemDtoPage}">
-            <li th:if="${list.attachFile==1}"><img th:src="@{|/upload/${list.newFileName}|}" alt=""></li>
-            <a th:href="@{|/trackDetail/${list.no}|}"><li th:text="${list.title}"></li></a>
+            <li><img src="/img/track/music.png" alt=""></li>
+            <a th:href="@{|/trackDetail/${list.no}|}">
+              <li th:text="${list.title}"></li>
+            </a>
             <li th:text="${list.duration}"></li>
             <li th:text="${list.bpm}"></li>
             <li th:text="${list.producer}"></li>
             <li th:text="${list.genre}"></li>
-            <li><a th:href="@{#}"><img src="/img/track/share.png" alt="share-icon"></a></li>
             <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
               <div th:text="${list.price}"></div>
             </li>

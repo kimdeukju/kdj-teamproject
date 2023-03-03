@@ -25,34 +25,36 @@ public class ItemEntity extends BaseEntity{
     private Long no;
 
     @Column(nullable = false)
-    private String title; //track title
-    private String duration; //불확실
+    private String title;
+
+    @Column(nullable = false)
+    private String duration;
+
+    @Column(nullable = false)
     private String producer;
-    private String price; //$
+
+    @Column(nullable = false)
+    private String price;
+
+    @Column(nullable = false)
     private int bpm;
-    private String genre; //장르
+
+    @Column(nullable = false)
+    private String genre;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_no")
     private MemberEntity item_member;
 
 
-    @OneToMany(mappedBy = "file_item",cascade = CascadeType.ALL)
-    private List<FileEntity> fileEntityList = new ArrayList<>();
-
-
     //선택사항
     @OneToMany(mappedBy = "item",cascade = CascadeType.REMOVE)
     private List<CartItemEntity> itemEntityList = new ArrayList<>();
-
-    @Column(nullable = false)
-    private int attachFile;//파일 유무(1,0)
 
 
     public static ItemEntity toItemEntity(ItemDto itemDto) {
 
         ItemEntity itemEntity = new ItemEntity();
-//        itemEntity.setNo(itemDto.getNo());
         itemEntity.setTitle(itemDto.getTitle());
         itemEntity.setDuration(itemDto.getDuration());
         itemEntity.setProducer(itemDto.getProducer());
@@ -60,14 +62,13 @@ public class ItemEntity extends BaseEntity{
         itemEntity.setBpm(itemDto.getBpm());
         itemEntity.setGenre(itemDto.getGenre());
         itemEntity.setItem_member(itemDto.getMember());
-        itemEntity.setAttachFile(0);
 
         return itemEntity;
     }
-    public static ItemEntity toItemFileEntity(ItemDto itemDto) {
+    public static ItemEntity toItemAllEntity(ItemDto itemDto) {
 
         ItemEntity itemEntity = new ItemEntity();
-//        itemEntity.setNo(itemDto.getNo());
+        itemEntity.setNo(itemDto.getNo());
         itemEntity.setTitle(itemDto.getTitle());
         itemEntity.setDuration(itemDto.getDuration());
         itemEntity.setProducer(itemDto.getProducer());
@@ -75,10 +76,11 @@ public class ItemEntity extends BaseEntity{
         itemEntity.setBpm(itemDto.getBpm());
         itemEntity.setGenre(itemDto.getGenre());
         itemEntity.setItem_member(itemDto.getMember());
-        itemEntity.setAttachFile(1);
 
         return itemEntity;
     }
+
+
 
 
 

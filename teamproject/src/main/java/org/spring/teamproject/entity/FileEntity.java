@@ -20,27 +20,10 @@ public class FileEntity extends BaseEntity{
     @Column(name = "file_no")
     private Long no;
 
-    private String fileName; //기존 파일명
+    private String FileName; //기존 파일명
     private String newFileName;  //uuid random
 
 
-    @ManyToOne
-    @JoinColumn(name = "item_no")
-    private ItemEntity file_item;
-
-
-    public static FileEntity fileUpload(ItemEntity itemEntity, String fileName, String newFileName){
-
-        FileEntity fileEntity = new FileEntity();
-
-        fileEntity.setFile_item(itemEntity);
-        fileEntity.setFileName(fileName);
-        fileEntity.setNewFileName(newFileName);
-
-        return fileEntity;
-
-
-    }
 
 
 }

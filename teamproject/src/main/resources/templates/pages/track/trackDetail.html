@@ -15,8 +15,8 @@
     <div class="container-con">
       <div class="track-detail-top">
         <div class="detail-top">
-          <div class="top-right" th:each="list: ${dto}">
-            <img th:src="@{|/upload/${list.newFileName}|}" alt="">
+          <div class="top-right">
+            <img src="/img/track/music.png" alt="">
           </div>
           <div class="top-left">
             <div class="track-name" th:each="list: ${dto}">
@@ -28,16 +28,17 @@
               <div class="bpm1">BPM</div>
               <div class="bpm2" th:text="${list.bpm}"></div>
               <div class="time1"><img src="/img/track/time.png" alt=""></div>
-              <div class="time2">June 21, 2021</div>
+              <div class="time2" th:text="*{#temporals.format(list.createTime, 'yyyy MM, dd')}"></div>
+            </div>
+            <div class="button" th:each="list: ${dto}">
+              <button><a th:href="@{|/trackUpdate/${list.no}|}">update</a></button>
+              <button><a th:href="@{|/trackDelete/${list.no}|}">delete</a></button>
             </div>
             <div class="action-tags">
               <div class="action">
                 <div class="action1" th:each="list: ${dto}">
                   <a href="#"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
                       th:text="${list.price}"></a>
-                </div>
-                <div class="action2">
-                  <a href="#"><img src="/img/track/share.png" alt="share-icon">SHARE</a>
                 </div>
               </div>
               <div class="tags" th:each="list: ${dto}">
@@ -60,30 +61,31 @@
       </div>
       <div class="track-detail-bottom">
         <div class="detail-bottom">
-          <div class="item-filter">
-            <ul>
-              <li>TITLE</li>
-              <li>TIME</li>
-              <li>BPM</li>
-              <li>PRODUCER</li>
-              <li>GENRE</li>
-            </ul>
-          </div>
           <div class="introduction1">
-            <ul th:each="list: ${dto}">
-              <li th:if="${list.attachFile==1}"><img th:src="@{|/upload/${list.newFileName}|}" alt=""></li>
-              <a th:href="@{|/trackDetail/${list.no}|}">
+
+            <div class="item-filter">
+              <ul>
+                <li>TITLE</li>
+                <li>TIME</li>
+                <li>BPM</li>
+                <li>PRODUCER</li>
+                <li>GENRE</li>
+              </ul>
+            </div>
+            <div class="introduction">
+              <ul th:each="list: ${dto}">
+                <li><img src="/img/track/music.png" alt=""></li>
                 <li th:text="${list.title}"></li>
-              </a>
-              <li th:text="${list.duration}"></li>
-              <li th:text="${list.bpm}"></li>
-              <li th:text="${list.producer}"></li>
-              <li th:text="${list.genre}"></li>
-              <li><a th:href="@{#}"><img src="/img/track/share.png" alt="share-icon"></a></li>
-              <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
-                <div th:text="${list.price}"></div>
-              </li>
-            </ul>
+                <li th:text="${list.duration}"></li>
+                <li th:text="${list.bpm}"></li>
+                <li th:text="${list.producer}"></li>
+                <li th:text="${list.genre}"></li>
+
+                <li><a th:href="@{#}"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"></a>
+                  <div th:text="${list.price}"></div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="introduction2 on">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -130,9 +132,15 @@
             Recusandae ipsam quisquam nam perferendis veritatis sed odit quas! Delectus hic modi, harum quidem placeat
             eaque atque. Amet autem ratione eligendi, illum dolores, voluptatem architecto asperiores atque maxime
             laboriosam accusamus!
+            Recusandae ipsam quisquam nam perferendis veritatis sed odit quas! Delectus hic modi, harum quidem placeat
+            eaque atque. Amet autem ratione eligendi, illum dolores, voluptatem architecto asperiores atque maxime
+            laboriosam accusamus!
             Ducimus assumenda minima eum quam numquam neque excepturi dicta alias odio, eveniet accusamus ipsum
             consequatur commodi in cupiditate veniam quaerat! Fuga veritatis illo ducimus, doloremque exercitationem
             ullam obcaecati modi esse?
+            Aperiam quibusdam, facere placeat suscipit consectetur neque vel esse, animi deleniti aut necessitatibus
+            sapiente repellat. Error odio dolorum aspernatur aliquam molestiae reiciendis, architecto, enim doloremque
+            voluptatum amet, quisquam odit quo.
             Aperiam quibusdam, facere placeat suscipit consectetur neque vel esse, animi deleniti aut necessitatibus
             sapiente repellat. Error odio dolorum aspernatur aliquam molestiae reiciendis, architecto, enim doloremque
             voluptatum amet, quisquam odit quo.

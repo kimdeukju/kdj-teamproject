@@ -5,33 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/track/trackInsert.css">
-  <title>TrackInsert</title>
+  <link rel="stylesheet" href="/css/track/trackUpdate.css">
+
+  <title>TrackUpdate</title>
 </head>
 
 
   <div class="container">
     <div class="container-con">
       <div class="title">
-        <h1 class="trackAdd">trackAdd</h1>
+        <h1 class="trackUpdate">trackUpdate</h1>
       </div>
-        <form th:action="@{/trackAdd}" method="post" th:object="${itemDto}">
+<form th:action="@{/trackUpdate}" method="post" th:object="${dto}">
       <div class="box">
         <div class="track-con">
           <div class="track-name1">
             <label>Pictures</label>
-
             <div class="file">
               <img src="/img/track/music.png" alt="">
             </div>
           </div>
           <div class="track-name">
             <label th:for="title">title</label>
-            <input type="text" th:field="*{title}">
+            <input type="text" name="title" th:value="${dto.title}">
+            <input type="hidden" name="no" th:value="${dto.no}" readonly>
           </div>
           <div class="track-name">
             <label th:for="duration">duration</label>
-            <input type="text" th:field="*{duration}">
+            <input type="text" name="duration" th:value="${dto.duration}">
           </div>
           <div class="track-name">
             <label th:for="bpm">bpm</label>
@@ -47,7 +48,7 @@
           </div>
           <div class="track-name">
             <label th:for="producer">producer</label>
-            <input type="text" th:field="*{producer}">
+            <input type="text" name="producer" th:value="${dto.producer}">
           </div>
           <div class="track-name">
             <label th:for="genre">genre</label>
@@ -55,7 +56,7 @@
               <option value="1" >Select genre ...</option>
               <option value="Rnb" >Rnb</option>
               <option value="Soul" >Soul</option>
-              <option value="Pop">Pop</option>
+              <option value="Pop" >Pop</option>
               <option value="Funk" >Funk</option>
               <option value="Trap" >Trap</option>
               <option value="Reggae" >Reggae</option>
@@ -63,10 +64,10 @@
           </div>
           <div class="track-name">
             <label th:for="price">price</label>
-            <input type="text" th:field="*{price}">
+            <input type="text" name="price" th:value="${dto.price}">
           </div>
           <div class="button">
-            <button type="submit">Registration</button>
+            <button type="submit">update</button>
           </div>
         </div>
       </div>
