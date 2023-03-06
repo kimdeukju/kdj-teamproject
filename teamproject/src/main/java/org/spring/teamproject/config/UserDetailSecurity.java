@@ -29,10 +29,10 @@ public class UserDetailSecurity implements UserDetailsService {
         if (!memberEmail.isPresent()) {
             throw new UsernameNotFoundException("사용자가 없습니다.");
         }
-        // 사용자가 있으면 get
-        MemberEntity memberEntity = memberEmail.get();
+        MemberEntity memberEntity = memberEmail.get();              // 사용자가 있으면 get
+
         //인증된 회원의 인가(권한 설정)
-        return User.builder()    //스프링관리자User역할을 빌더로 간단하게만듬
+        return User.builder()    //스프링관리자 User 역할을 빌더로 간단하게만듬
                 .username(memberEntity.getEmail())
                 .password(memberEntity.getPassword())
                 .roles(memberEntity.getRole().toString())

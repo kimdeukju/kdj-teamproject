@@ -18,34 +18,37 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Transactional  // 추가, 삭제 ,수정
+    @Transactional  // 회원추가
     public void insertMember(MemberDto memberDto) {
-        MemberEntity memberEntity=
-                MemberEntity.memberEntity(memberDto,passwordEncoder);
+        MemberEntity memberEntity= MemberEntity.memberEntity(memberDto,passwordEncoder);
         memberRepository.save(memberEntity);
     }
-
+    @Transactional              //회원가입 이메일 중복체크
+    public int findByUserNameDo(String email) {
+        Optional<MemberEntity> memberEntity =memberRepository.findByEmail(email);
+        if(memberEntity.isPresent()){
+            //이름이있으면(중복)
+            return 0;
+        }else {
+            //이름이없으면(중복x)
+            return 1;
+        }
+    }
     //회원조회
     public MemberDto memberDetail(String email) {
         Optional<MemberEntity> memberEntity=memberRepository.findByEmail(email);
-//        Optional<Optional<MemberEntity>> memberEntity1=Optional.ofNullable(memberRepository.findByEmail(email));
-//        Optional<MemberEntity> memberEntity2=Optional.ofNullable(email);
         if (!memberEntity.isPresent()){
             return null;
         }
-        //Entity -> Dto
         MemberDto memberDto=MemberDto.updateMemberDto(memberEntity.get());
         return memberDto;
     }
-
     @Transactional  //회원수정
     public void updateOk(MemberDto memberDto) {
-
         MemberEntity memberEntity=MemberEntity.updateMemberEntity(memberDto,passwordEncoder);
         memberRepository.save(memberEntity);
     }
-
-    @Transactional //삭제
+    @Transactional //회원삭제
     public int deleteOk(Long id) {
         MemberEntity memberEntity = memberRepository.findById(id).get();
         memberRepository.delete(memberEntity);
@@ -54,6 +57,4 @@ public class MemberService {
         }
         return 1;
     }
-
-
 }

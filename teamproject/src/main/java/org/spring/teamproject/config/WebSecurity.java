@@ -19,35 +19,29 @@ public class WebSecurity {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
         http.csrf().disable(); //페이지 보안 설정 Exception 예외 처리 필수
         http.userDetailsService(userDetailSecurity);
-
         //권한설정
         http.authorizeHttpRequests()
-                .antMatchers("/","/item/main,/login,/join","board/main").permitAll()
-                .antMatchers("/member/**").authenticated()
-                .antMatchers("/member/**").hasAnyRole("MEMBER","ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN");
-
+                .antMatchers("/","/item/main,/login,/join","board/main").permitAll()  //모든사용자 접근가능
+                .antMatchers("/member/**").authenticated()                            //로그인시 접근가능
+                .antMatchers("/member/**").hasAnyRole("MEMBER","ADMIN")         //MEMBER,ADMIN 권한만접근가능
+                .antMatchers("/admin/**").hasRole("ADMIN");                           //ADMIN 권한만 접근가능
         //login&logout
         http.formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/login")
-                .usernameParameter("email") //id정해지면
-                .passwordParameter("password")
-                // 로그인 성공시 url
-                .defaultSuccessUrl("/")
-                // 로그인 실패시 url
-                .failureForwardUrl("/member/fail")
+                .loginPage("/login")                                //로그인 요청시 security 로그인페이지
+                .loginProcessingUrl("/login")                       //로그인 form에서 실행 POST
+                .usernameParameter("email")                         //로그인시 아이디
+                .passwordParameter("password")                      //로그인시 비밀번호
+                .defaultSuccessUrl("/")                             //로그인 성공시 url
+                .failureForwardUrl("/member/fail")                  //로그인 실패시 url
                 .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/");
-
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))     //logout 입력시 security 로그아웃
+                .logoutSuccessUrl("/");                                                //로그아웃 성공시 url
         return http.build();
     }
-    @Bean  // 비빌번호 암호화
+    @Bean  // 비밀번호 암호화
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }

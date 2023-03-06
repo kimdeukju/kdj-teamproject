@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1seog2jo Join</title>
+    <script th:src="@{/js/member/member.js}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" th:href="@{/css/member/join.css}">
     <!--  <link rel="stylesheet" href="../../static/css/join/join.css">-->
 </head>
@@ -22,7 +24,9 @@
                     <li class="s2"><input type="email" th:field="*{email}" name="email" id="email" placeholder="Enter Email"
                                           class="text" minlength="4" maxlength="15">
                         <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                        <input type="button" value="중복확인" id="emailChecked">
                     </li>
+
 
                     <li class="s2"><input type="password" th:field="*{password}" name="password" id="password"
                                           placeholder="Enter Password" class="text" minlength="4" maxlength="10">
