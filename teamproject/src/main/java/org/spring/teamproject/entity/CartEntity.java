@@ -25,7 +25,7 @@ public class CartEntity {
 
     @OneToOne
     @JoinColumn(name = "member_no")
-    private MemberEntity cart_member;
+    private MemberEntity member;
 
     @OneToMany(mappedBy = "cart",cascade = CascadeType.REMOVE)
     private List<CartItemEntity> cartItemEntities = new ArrayList<>();

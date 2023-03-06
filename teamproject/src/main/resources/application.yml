@@ -1,34 +1,20 @@
-
 server:
   port: 8099
 
-spring:
-  thymeleaf:
-    cache : false
 
+spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://ec2-mysql-db2.cdmssvujvy8y.ap-northeast-2.rds.amazonaws.com:3306/bootex
-
-    username: jichang23
-    password: dlwlckd12
+    url: jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: 1234
 
   jpa:
-    #    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    #    open-in-view: false
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     hibernate:
-      format_sql: true
-      ddl-auto: create
-
-logging:
-  level:
-    org:
+      ddl-auto: update
+    properties:
       hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
-
-
+        format_sql: true

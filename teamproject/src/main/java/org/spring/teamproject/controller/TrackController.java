@@ -2,6 +2,8 @@ package org.spring.teamproject.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.spring.teamproject.dto.ItemDto;
+import org.spring.teamproject.dto.MemberDto;
+import org.spring.teamproject.service.CartService;
 import org.spring.teamproject.service.ItemService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,7 +22,7 @@ import java.util.List;
 public class TrackController {
 
     private final ItemService itemService;
-
+    private final CartService cartService;
     // track 추가
     @GetMapping("/trackAdd")
     public String addView(Model model) {
@@ -84,18 +86,31 @@ public class TrackController {
         return "pages/track/trackList";
     }
 
-    // track 상세목록
-    @GetMapping("/trackDetail/{no}")
-    public String trackDetail(@PathVariable("no") long no, Model model){
-        ItemDto dto=itemService.trackDetail(no);
+//    // track 상세목록
+//    @GetMapping("/trackDetail/{no}")
+//    public String trackDetail(@PathVariable("no") long no, Model model){
+//        ItemDto dto=itemService.trackDetail(no);
+//
+//        if(dto!= null){
+//            model.addAttribute("dto",dto);
+//            return "pages/track/trackDetail";
+//        }else{
+//            return null;
+//        }
+//
+//    }
 
+    @GetMapping("/trackDetail/{itemNo}/{memberNo}")
+    public String trackDetail(@PathVariable("itemNo") Long itemNo,@PathVariable("memberNo") Long memberNo, Model model){
+
+        ItemDto dto=itemService.trackDetail(itemNo);
+        MemberDto memberDto = cartService.memberDtoSearch(memberNo);
         if(dto!= null){
             model.addAttribute("dto",dto);
-            return "pages/track/trackDetail";
-        }else{
-            return null;
+            model.addAttribute("member",memberDto);
         }
 
+        return "pages/track/trackDetail";
     }
 
     // track 수정
@@ -107,6 +122,7 @@ public class TrackController {
 
         return "pages/track/trackUpdate";
     }
+
 
     // track 수정실행
     @PostMapping("/trackUpdate")

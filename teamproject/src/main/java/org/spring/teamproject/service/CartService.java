@@ -59,7 +59,7 @@ public class CartService {
 
         Optional<MemberEntity> member = memberRepository.findByNo(memberNo);
         if(member.isPresent()){
-            MemberDto memberDto = MemberDto.memberToDto(member.get());
+            MemberDto memberDto = MemberDto.updateMemberDto(member.get());
             return memberDto;
         }else {
             return null;
