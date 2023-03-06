@@ -1,25 +1,20 @@
 package org.spring.teamproject.service;
 
 import lombok.RequiredArgsConstructor;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.spring.teamproject.dto.ItemDto;
-import org.spring.teamproject.entity.FileEntity;
 import org.spring.teamproject.entity.ItemEntity;
 import org.spring.teamproject.repository.FileRepository;
 import org.spring.teamproject.repository.ItemRepository;
 //import org.spring.teamproject.repository.MemberRepository;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -57,16 +52,15 @@ public class ItemService {
 
         return itemDtoPage;
     }
+    // 목록에서 검색
+    public Page<ItemDto> search(String search,Pageable pageable) {
+        Page<ItemEntity> itemEntities=itemRepository.findByTitleContaining(search,pageable);
 
-    public List<ItemDto> search(String search) {
-        List<ItemDto> itemDtoList=new ArrayList<>();
+        Page<ItemDto> itemDtoPage=itemEntities.map(ItemDto::toItemDto);
 
-        List<ItemEntity> itemEntities=itemRepository.findByTitleContaining(search);
+        return itemDtoPage;
 
-        for(ItemEntity itemEntity:itemEntities){
-            itemDtoList.add(ItemDto.toItemDto(itemEntity));
-        }
-        return itemDtoList;
+
 
     }
 

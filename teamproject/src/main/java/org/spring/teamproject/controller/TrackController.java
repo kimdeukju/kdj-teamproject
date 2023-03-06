@@ -17,10 +17,11 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class ItemController {
+public class TrackController {
 
     private final ItemService itemService;
 
+    // track 추가
     @GetMapping("/trackAdd")
     public String addView(Model model) {
         model.addAttribute("itemDto", new ItemDto());
@@ -28,6 +29,7 @@ public class ItemController {
         return "/pages/track/trackInsert";
     }
 
+    // track 추가 실행
     @PostMapping("/trackAdd")
     public String addmet(@Valid ItemDto itemDto, BindingResult bindingResult) {
 
@@ -39,68 +41,64 @@ public class ItemController {
         return "redirect:/trackList";
     }
 
-    // track목록
+    // track 목록
     @GetMapping("/trackList")
     public String itemList(Model model, @PageableDefault(page = 0,size = 10,sort = "no",
-                        direction = Sort.Direction.DESC)Pageable pageable) {
-        // 목록 페이징 처리
-        Page<ItemDto> itemDtoPage=itemService.itemPage(pageable);
-        // 제목으로 검색
+            direction = Sort.Direction.DESC) Pageable pageable,
+                           @RequestParam(value = "search",required = false) String search) {
 
-        Long total=itemDtoPage.getTotalElements(); // 전체 레코드 수
-        int bockNum=4;
-        int nowPage= itemDtoPage.getNumber()+1 ;// 현재페이지-> boardList.getNumber()는 0부터 시작
-        int startPage=Math.max(1,itemDtoPage.getNumber()-bockNum); //시작페이지 -> 기본이 최소 1페이지
-        int endPage=itemDtoPage.getTotalPages(); // 마지막페이지
+        // 검색어가 없으면 전체목록 페이징
+        if(search==null){
+            Page<ItemDto> list =itemService.itemPage(pageable);
 
-        model.addAttribute("itemDtoPage",itemDtoPage);
-        model.addAttribute("total",total);
-        model.addAttribute("nowPage",nowPage);
-        model.addAttribute("startPage",startPage);
-        model.addAttribute("endPage",endPage);
+            Long total=list.getTotalElements(); // 전체 레코드 수
+            int bockNum=4;
+            int nowPage= list.getNumber()+1 ;// 현재페이지-> boardList.getNumber()는 0부터 시작
+            int startPage=Math.max(1,list.getNumber()-bockNum); //시작페이지 -> 기본이 최소 1페이지
+            int endPage=list.getTotalPages(); // 마지막페이지
 
-        return "pages/track/trackList";
-    }
-    @GetMapping("/trackList/search")
-    public String search(@RequestParam (value = "search",required = false)String search,Model model){
-        List<ItemDto> itemDtoPage=itemService.search(search);
+            model.addAttribute("list",list);
+            model.addAttribute("total",total);
+            model.addAttribute("nowPage",nowPage);
+            model.addAttribute("startPage",startPage);
+            model.addAttribute("endPage",endPage);
+        // 검색어가 있으면 검색된 목록만 페이징
+        }else{
+            Page<ItemDto> list = itemService.search(search,pageable);
 
-        model.addAttribute("itemDtoPage",itemDtoPage);
+            Long total=list.getTotalElements(); // 전체 레코드 수
+            int bockNum=4;
+            int nowPage= list.getNumber()+1 ;// 현재페이지-> boardList.getNumber()는 0부터 시작
+            int startPage=Math.max(1,list.getNumber()-bockNum); //시작페이지 -> 기본이 최소 1페이지
+            int endPage=list.getTotalPages(); // 마지막페이지
 
-        return "pages/track/trackList";
-    }
-
-    // track상세목록
-//   @GetMapping("/trackDetail/{no}")
- //   public String trackDetail(@PathVariable("no") long no, Model model){
-//        ItemDto dto=itemService.trackDetail(no);
-
-//        if(dto!= null){
-//            model.addAttribute("dto",dto);
-//            return "pages/track/trackDetail";
-//        }else{
-//            return null;
-//        }
-
-//    }
-
-
- //track 상세목록 이지창
-@GetMapping("/trackDetail/{itemNo}/{memberNo}")
-    public String trackDetail(@PathVariable("itemNo") Long itemNo,@PathVariable("memberNo") Long memberNo, Model model){
-
-        ItemDto dto=itemService.trackDetail(itemNo);
-        MemberDto memberDto = cartService.memberDtoSearch(memberNo);
-        if(dto!= null){
-            model.addAttribute("dto",dto);
-            model.addAttribute("member",memberDto);
+            model.addAttribute("list",list);
+            model.addAttribute("total",total);
+            model.addAttribute("nowPage",nowPage);
+            model.addAttribute("startPage",startPage);
+            model.addAttribute("endPage",endPage);
         }
 
-        return "pages/track/trackDetail";
+
+
+        return "pages/track/trackList";
     }
 
+    // track 상세목록
+    @GetMapping("/trackDetail/{no}")
+    public String trackDetail(@PathVariable("no") long no, Model model){
+        ItemDto dto=itemService.trackDetail(no);
 
-    // track수정
+        if(dto!= null){
+            model.addAttribute("dto",dto);
+            return "pages/track/trackDetail";
+        }else{
+            return null;
+        }
+
+    }
+
+    // track 수정
     @GetMapping("/trackUpdate/{no}")
     public String trackUpdate(@PathVariable("no") long no, Model model){
         ItemDto dto=itemService.trackUpdate(no);
@@ -120,6 +118,7 @@ public class ItemController {
         return "redirect:/trackList";
     }
 
+    // track 삭제
     @GetMapping("/trackDelete/{no}")
     public String trackDelete(@PathVariable("no") long no){
 
@@ -130,30 +129,4 @@ public class ItemController {
 
     }
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
