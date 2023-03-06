@@ -15,7 +15,7 @@
 
       <div class="title">
         <!--페이지 타이틀-->
-        <h1>Community</h1>
+        <h1><a th:href="@{/board/}">Community</a></h1>
       </div>
 
       <div class="boardview">
@@ -49,7 +49,7 @@
 
         <div class="end-item">
           <!--페이징, 검색-->
-          <div class="write-btn">
+          <div class="write-btn" sec:authorize="isAuthenticated()">
             <a th:href="@{/board/write}">WRITE</a>
           </div>
 
@@ -67,10 +67,10 @@
           </div>
 
           <div class="search-form">
-            <form action="#" method="get">
+            <form th:action="@{/board/search}" method="get">
               <select name="" id="">
-                <option value="title">제목</option>
-                <option value="writer">작성자</option>
+                <option value="title">title</option>
+                <option value="writer">writer</option>
               </select>
               <input type="text" name="search" id="search" class="searchtext" placeholder="Search">
               <input type="image" th:src="@{/img/board/searchicon.png}" alt="" class="submitbtn">

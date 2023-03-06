@@ -13,35 +13,36 @@
       <div class="board-con">
 
         <div class="boardview">
-          <ul>
+          <div class="title">
             <h3 th:text="${detail.title}">제목</h3>
-            <li class="li1">
-              <span>
-                <img th:src="@{/img/board/usericon.png}" alt="">
-                <span th:text="${detail.writer}">작성자</span>
-              </span>
-              <span th:text="*{#temporals.format(detail.createTime, 'HH:mm:ss')}">작성시간</span>
-            </li>
-            <li class="li2" th:text="${detail.content}">내용</li>
-            <img th:src="@{|/upload/${detail.newName}|}" alt="">
-          </ul>
+          </div>
+          <div class="write-info">
+            <div class="writer">
+              <img th:src="@{/img/board/usericon.png}" alt="">
+              <span th:text="${detail.writer}">작성자</span>
+            </div>
+            <span th:text="*{#temporals.format(detail.createTime, 'HH:mm:ss')}">작성시간</span>
+          </div>
+          <div class="content" th:text="${detail.content}">내용</div>
+          <img th:src="@{|/upload/${detail.newName}|}" alt="">
         </div>
 
         <div class="btns">
-          <ul>
-            <li class="btnli1">
-              <input type="button" value="🤍 I LIKE IT">
-            </li>
-            <!--로그인&해당 회원만 보이도록 validation 처리해야 함-->
-            <li class="btnli2">
+          <div class="like">
+            <input type="button" value="🤍 I LIKE IT">
+          </div>
+          <div class="btns-sub">
+            <div class="back">
               <a th:href="@{/board/}">BACK</a>
-              <span>
-                <!--sec:authorize="hasAnyRole(관리자, 해당 회원만 보이도록 처리)"-->
-                <a th:href="@{|/board/update/${detail.no}|}">MODIFY</a>
-                <a th:href="@{|/board/delete/${detail.no}|}">DELETE</a>
-              </span>
-            </li>
-          </ul>
+            </div>
+            <div class="memberonly" sec:authorize="hasAnyRole('ADMIN','MEMBER')">
+              <!--안 먹음-->
+              <!--th:if="${#authentication.principal.userName} == ${detail.userName}"-->
+              <a th:href="@{|/board/update/${detail.no}|}">MODIFY</a>
+              <a th:href="@{|/board/delete/${detail.no}|}">DELETE</a>
+            </div>
+          </div>
+
         </div>
 
       </div>

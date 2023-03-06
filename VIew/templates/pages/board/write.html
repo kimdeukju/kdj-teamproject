@@ -18,7 +18,7 @@
             <li class="li1">
               <input type="text" th:field="*{title}" placeholder="TITLE">
             </li>
-            <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li>
+            <!-- <li class="title-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></li> -->
 
             <li class="li2">
               <img th:src="@{/img/board/youtubeicon.png}" alt="youtube-icon">
@@ -26,17 +26,18 @@
 
               <label th:for="boardFile">
                 <img th:src="@{/img/board/foldericon.png}" alt="folder-icon">
-                <input type="file" th:field="*{boardFile}" class="li2sub2" style="display: none;">
+                <input type="file" th:field="*{boardFile}" class="li2sub2">
               </label>
             </li>
 
             <li class="li3">
               <textarea name="content" th:field="*{content}" id="content" cols="30" rows="10" placeholder=""></textarea>
             </li>
-            <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li>
+            <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
 
             <li>
-              작성자(임시) <input type="text" th:field="*{writer}">
+              <input type="text" th:text="${userName.username}" th:field=" *{writer}">
+              <!--writer를 회원 이름으로 받기(th:text="${.userName}") 안 가져와짐-->
             </li>
 
             <li class="li4">

@@ -41,7 +41,7 @@
             <!-- <li class="content-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></li> -->
 
             <li>
-              작성자(임시) <input type="text" th:value="${detail.writer}" id="writer" name="writer" readonly>
+              <input type="text" th:value="${detail.writer}" id="writer" name="writer" readonly hidden>
             </li>
 
             <li class="li4">
