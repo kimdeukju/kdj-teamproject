@@ -18,7 +18,7 @@ public class CartItemEntity extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_item_no")
-    private Long id;
+    private Long no;
 
 
 
@@ -29,5 +29,16 @@ public class CartItemEntity extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_no")
     private ItemEntity item;
+
+public static CartItemEntity addCartItem ( ItemEntity itemEntity,CartEntity cartEntity){
+        CartItemEntity cartItemEntity = new CartItemEntity();
+
+        cartItemEntity.setItem(itemEntity);
+        cartItemEntity.setCart(cartEntity);
+
+        return cartItemEntity;
+
+
+    }
 
 }

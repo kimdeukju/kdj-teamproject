@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/static/js/header.js" defer></script>
     <script src="/static/js/footer.js" defer></script>
-    <link rel="stylesheet" href="/static/css/member/myitem.css">
-    <link rel="stylesheet" href="/static/css/common/header.css">
-    <link rel="stylesheet" href="/static/css/common/footer.css">
-    <link rel="stylesheet" href="/static/css/common/reset.css">
+    <link rel="stylesheet" th:href="@{/css/member/myitem.css}">
+    <link rel="stylesheet" th:href="@{/css/common/header.css}">
+    <link rel="stylesheet" th:href="@{/css/common/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/common/reset.css}">
     <title>Document</title>
 </head>
 
@@ -82,27 +82,11 @@
                     </ul>
                 </div>
                 <div class="info-data">
-                    <ul>
-                        <li>img</li>
-                        <li>th:value${item.info}</li>
-                        <li>th:value${item.price}</li>
+                    <ul th:each="list : ${cartItem}">
+                        <li><img src="/img/track/music.png" alt=""></li>
+                        <li th:text="${list.producer}"></li>
+                        <li th:text="${list.price}"></li>
                     </ul>
-                    <ul>
-                        <li>img</li>
-                        <li>th:value${item.info}</li>
-                        <li>th:value${item.price}</li>
-                    </ul>
-                    <ul>
-                        <li>img</li>
-                        <li>th:value${item.info}</li>
-                        <li>th:value${item.price}</li>
-                    </ul>
-                    <!-- <ul>
-                        <li>img</li>
-                        <li>th:value${item.info}</li>
-                        <li>th:value${item.price}</li>
-                    </ul> -->
-                    
                 </div>
 
             </div>

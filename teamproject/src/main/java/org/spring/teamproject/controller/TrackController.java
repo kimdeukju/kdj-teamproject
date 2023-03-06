@@ -71,18 +71,34 @@ public class ItemController {
     }
 
     // track상세목록
-    @GetMapping("/trackDetail/{no}")
-    public String trackDetail(@PathVariable("no") long no, Model model){
-        ItemDto dto=itemService.trackDetail(no);
+//   @GetMapping("/trackDetail/{no}")
+ //   public String trackDetail(@PathVariable("no") long no, Model model){
+//        ItemDto dto=itemService.trackDetail(no);
 
+//        if(dto!= null){
+//            model.addAttribute("dto",dto);
+//            return "pages/track/trackDetail";
+//        }else{
+//            return null;
+//        }
+
+//    }
+
+
+ //track 상세목록 이지창
+@GetMapping("/trackDetail/{itemNo}/{memberNo}")
+    public String trackDetail(@PathVariable("itemNo") Long itemNo,@PathVariable("memberNo") Long memberNo, Model model){
+
+        ItemDto dto=itemService.trackDetail(itemNo);
+        MemberDto memberDto = cartService.memberDtoSearch(memberNo);
         if(dto!= null){
             model.addAttribute("dto",dto);
-            return "pages/track/trackDetail";
-        }else{
-            return null;
+            model.addAttribute("member",memberDto);
         }
 
+        return "pages/track/trackDetail";
     }
+
 
     // track수정
     @GetMapping("/trackUpdate/{no}")

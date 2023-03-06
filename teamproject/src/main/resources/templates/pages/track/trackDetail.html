@@ -37,8 +37,10 @@
             <div class="action-tags">
               <div class="action">
                 <div class="action1" th:each="list: ${dto}">
-                  <a href="#"><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
-                      th:text="${list.price}"></a>
+                  <form th:action="@{|/cart/${memberNo}/${itemNo}|}" method="post">
+                <div class="action1" th:each="list: ${dto}">
+                  <button type="submit" ><img src="/img/track/shopping-bag.png" alt="shopping-bag-icon"
+                      th:text="${list.price}"></button>
                 </div>
               </div>
               <div class="tags" th:each="list: ${dto}">

@@ -21,7 +21,7 @@ public class CartEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_no")
-    private Long id;
+    private Long no;
 
     @OneToOne
     @JoinColumn(name = "member_no")
@@ -30,4 +30,10 @@ public class CartEntity {
     @OneToMany(mappedBy = "cart",cascade = CascadeType.REMOVE)
     private List<CartItemEntity> cartItemEntities = new ArrayList<>();
 
+public static CartEntity cartCreate( MemberEntity memberEntity){
+        CartEntity cartEntity = new CartEntity();
+        cartEntity.setMember(memberEntity);
+        return cartEntity;
+
+    }
 }
