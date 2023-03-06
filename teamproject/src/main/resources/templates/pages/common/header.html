@@ -41,7 +41,7 @@
                     <li class="li-last" sec:authorize="isAuthenticated()">
                         <a th:href="@{/#}"><img src="/img/head/shopping-bag.png" alt="shoppingBag"></a>
                         <!--마이페이지 a태그-->
-                        <a th:href="@{|/mypage/${#authentication.principal.username}|}"><img src="/img/head/login.png"></a>
+                        <a th:href="@{|/member/mypage/${#authentication.principal.username}|}"><img src="/img/head/login.png"></a>
                     </li>
 <!--                    <li class="li-last">-->
 <!--                        <a th:href="@{/#}">-->
