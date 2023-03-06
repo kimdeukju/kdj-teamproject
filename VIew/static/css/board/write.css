@@ -37,8 +37,6 @@
   margin: 10px;
 }
 
-/* .container .container-con .write-form>form>ul>li.li1 {} */
-
 .container .container-con .write-form>form>ul>li.title-error {
   color: #d50000;
   font-size: smaller;
@@ -62,12 +60,10 @@
 
 .container .container-con .write-form>form>ul>li.li2 {
   align-items: center;
-  /* padding: 5px; */
   box-sizing: border-box;
   /* border: 1px solid; */
 }
 
-/*js로 링크 입력창 안 보이게 처리하기(모달)*/
 .container .container-con .write-form>form>ul>li.li2>input.li2sub {
   border: none;
   width: 100px;
@@ -120,32 +116,27 @@
   text-align: center;
 }
 
-/* padding: 15px 20px; */
-
 .container-con .write-form>form>ul>li.li4 a {
   width: 70px;
   line-height: 30px;
   text-align: center;
   border: 0px solid;
-  /* padding: 10px; */
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 3px 3px 3px 3px;
   font-size: 14px;
 }
 
 .container .container-con .write-form>form>ul>li.li4 input {
   width: 70px;
-  /* height: 30px; */
   line-height: 30px;
   text-align: center;
   cursor: pointer;
   font-size: 14px;
-  /* padding: 15px 20px; */
   border: 0px solid;
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 3px 3px 3px 3px;
 }
