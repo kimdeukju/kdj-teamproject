@@ -1,6 +1,6 @@
 # 1suck2jo TeamProject
 
-## Springboot Jpa Security를 이용한 CRUD
+## Springboot Jpa Security를 이용한 CRUD ROLE
 
 1. UserDetailSecurity
 2. WebSecurity
