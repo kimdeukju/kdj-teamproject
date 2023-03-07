@@ -2,18 +2,6 @@
 
 ## Springboot Jpa Security를 이용한 CRUD ROLE
 
-## List
-1. UserDetailSecurity
-2. WebSecurity
-3. MainController
-4. MemberController
-5. Dto
-6. Entity
-7. Repository
-8. Role
-9. MemberService1
-10. MemberService2
-11. Header
 
 ## Table <!-- omit in toc -->
 
