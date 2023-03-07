@@ -1,7 +1,5 @@
 # 1suck2jo Shopping Mall TeamProject
 
-## Springboot Jpa Security를 이용한 CRUD ROLE
-
 
 ## Table <!-- omit in toc -->
 
