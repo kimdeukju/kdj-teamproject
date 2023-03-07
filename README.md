@@ -12,7 +12,7 @@
 - [Dto](#Dto)
 - [Entity](#Entity)
 - [Repository](#Repository)
-- [MemberService](#MemberService)
+- [MemberService]
   - [MemberService1](#MemberService1)
   - [MemberService2](#MemberService2)
 - [Header](#Header)
